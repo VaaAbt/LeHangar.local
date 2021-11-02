@@ -1,0 +1,42 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ".:/var/code"
+      - "./docker/nginx/site.conf:/etc/nginx/conf.d/site.conf"
+    links:
+      - php
+  php:
+    build: "./docker/php"
+    volumes:
+      - ".:/var/code"
+    links:
+      - mariadb
+  composer:
+    image: composer
+    command: "install"
+    working_dir: "/var/code"
+    volumes:
+      - ".:/var/code"
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MARIADB_DATABASE: "hangarlocal"
+      MARIADB_USER: "hangarlocal"
+      MARIADB_PASSWORD: "hangarlocal"
+      MARIADB_RANDOM_ROOT_PASSWORD: 1
+    # volumes:
+    #   - "./CREATE_TABLES.sql:/docker-entrypoint-initdb.d/CREATE_TABLES.sql"
+    #   - "./var/database:/var/lib/mysql"
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - "3000:80"
+    links:
+      - mariadb
+    environment:
+      PMA_HOST: mariadb
+
