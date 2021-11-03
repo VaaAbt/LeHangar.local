@@ -4,14 +4,14 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Grower extends Model
+class Order extends Model
 {
     /**
      * Set the corresponding table name
      *
      * @var string
      */
-    protected $table = 'grower';
+    protected $table = 'order';
 
     /**
      * Disable default timestamps columns
@@ -19,4 +19,5 @@ class Grower extends Model
      * @var bool
      */
     public $timestamps = false;
+
 }

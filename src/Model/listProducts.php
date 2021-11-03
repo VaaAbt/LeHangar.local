@@ -4,14 +4,14 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Grower extends Model
+class listProducts extends Model
 {
     /**
      * Set the corresponding table name
      *
      * @var string
      */
-    protected $table = 'grower';
+    protected $table = 'listproducts';
 
     /**
      * Disable default timestamps columns
