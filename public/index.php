@@ -1,9 +1,9 @@
 <?php
-session_start();
+//session_start();
 
 //use App\Middleware\CORSMiddleware;
-use DI\Container;
 //use Slim\Csrf\Guard;
+use Illuminate\Container\Container;
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
