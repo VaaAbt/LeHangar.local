@@ -10,7 +10,7 @@ class ProductController extends AbstractController
 {
     public function getAllProducts(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        $products = Product::class->getAll();
+        $products = Product::getAll();
         return $this->render($response, 'products.html.twig', [
             'products' => $products
         ]);

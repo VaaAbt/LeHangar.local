@@ -27,7 +27,7 @@ class Product extends Model
     }
 
 
-    public function getAll()
+    public static function getAll()
     {
         return Product::all();
     }

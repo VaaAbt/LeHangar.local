@@ -46,12 +46,12 @@ CREATE TABLE IF NOT EXISTS product
 );
 
 
-CREATE TABLE IF NOT EXISTS order
+CREATE TABLE IF NOT EXISTS `order`
 (
     id int(11) NOT NULL AUTO_INCREMENT,
     customer_name varchar(255) NOT NULL,
     customer_email varchar(255) NOT NULL,
-    customerphone varchar(255) NOT NULL,
+    customer_phone varchar(255) NOT NULL,
     amount float(6, 2) NOT NULL,
     status int(11) NOT NULL,
     PRIMARY KEY (id)
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS listProducts
     CONSTRAINT fk_list_id_product
         FOREIGN KEY (id_product) REFERENCES product (id),
     CONSTRAINT fk_list_id_order
-        FOREIGN KEY (id_order) REFERENCES order (id)
+        FOREIGN KEY (id_order) REFERENCES `order` (id)
 );
 
 
