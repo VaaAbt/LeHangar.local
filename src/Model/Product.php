@@ -26,4 +26,10 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'id', 'id_category');
     }
 
+
+    public function getAll()
+    {
+        return Product::all();
+    }
+
 }
