@@ -4,3 +4,4 @@ vendor
 *.phar
 var
 public/uploads
+composer.lock
