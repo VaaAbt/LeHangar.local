@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Grower extends Model
 {
@@ -19,4 +20,10 @@ class Grower extends Model
      * @var bool
      */
     public $timestamps = false;
+
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class, 'id_grower', 'id');
+    }
 }

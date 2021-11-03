@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class listProducts extends Model
 {
@@ -19,4 +20,5 @@ class listProducts extends Model
      * @var bool
      */
     public $timestamps = false;
+
 }

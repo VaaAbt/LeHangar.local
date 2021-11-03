@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Product extends Model
 {
@@ -19,5 +20,10 @@ class Product extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'id', 'id_category');
+    }
 
 }
