@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Exception;
-use Illuminate\Container\Container;
+use DI\Container;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Views\Twig;
 

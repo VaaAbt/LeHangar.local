@@ -3,7 +3,7 @@
 
 //use App\Middleware\CORSMiddleware;
 //use Slim\Csrf\Guard;
-use Illuminate\Container\Container;
+use DI\Container;
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -25,10 +25,10 @@ $container->set('csrf', function () use ($responseFactory) {
 $app->add('csrf');
 
 // CORS
-$app->add(new CORSMiddleware());
+$app->add(new CORSMiddleware());**/
 
 require __DIR__ . '/../conf/dependencies.php';
-require __DIR__ . '/../conf/bootstrap.php';**/
+require __DIR__ . '/../conf/bootstrap.php';
 
 require __DIR__ . '/../src/routes.php';
 
