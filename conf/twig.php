@@ -16,8 +16,7 @@ return static function (App $app) {
     $twig = Twig::create('../src/View', ['cache' => false, 'debug' => true]);
 
     $environment = $twig->getEnvironment();
-    $environment->addGlobal('session', $_SESSION);
-
+    $environment->addGlobal('cart', $_SESSION['cart']);
 
     // Add twig to container
     $container->set('twig', $twig);

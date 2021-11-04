@@ -26,6 +26,9 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'id', 'id_category');
     }
 
+    public static function getProductById($id){
+        return Product::where('id', '=', $id)->first();
+    }
 
     public static function getAll()
     {

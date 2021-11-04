@@ -94,10 +94,19 @@ body{
                         border-bottom: 2px solid rgb(24, 78, 119);
                     }
                 }
+
+                .cart-badge{
+                    background-color: red;
+                    padding: 2px;
+                    color: white;
+                    border-radius: 10px;
+                }
             }
         }
     }
 }
+
+
 
 
 // PRODUCT

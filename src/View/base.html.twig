@@ -15,14 +15,15 @@
         <a class="navbar-title" href="/">Le Hangar</a>
         <div class="navbar-menu" id="">
             <ul class="">
-                <li class="nabar-item">
+                <li class="navbar-item">
                     <a href="/products">Produits</a>
                 </li>
-                <li class="nabar-item">
+                <li class="navbar-item">
                     <a href="/products">A propos</a>
                 </li>
-                <li class="nabar-item">
-                    <a href="/products">Mon panier</a>
+                <li class="navbar-item">
+                    <a href="/cart">Mon panier</a>
+                    <span class="cart-badge">{{ cart | length != 0 ? cart | length : '' }}</span>
                 </li>
             </ul>
         </div>
