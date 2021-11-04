@@ -23,3 +23,4 @@ $app->get('/products/addToCart/{id}/addOne', [ProductController::class, 'addProd
 $app->get('/products/addToCart/{id}/removeOne', [ProductController::class, 'removeProductQuantityToCart']);
 
 $app->get('/cart', [CartController::class, 'getCartView']);
+$app->post('/cart', [CartController::class, 'orderCart']);
