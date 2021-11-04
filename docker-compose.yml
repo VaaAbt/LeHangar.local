@@ -28,9 +28,9 @@ services:
       MARIADB_USER: "hangarlocal"
       MARIADB_PASSWORD: "hangarlocal"
       MARIADB_RANDOM_ROOT_PASSWORD: 1
-    # volumes:
-    #   - "./CREATE_TABLES.sql:/docker-entrypoint-initdb.d/CREATE_TABLES.sql"
-    #   - "./var/database:/var/lib/mysql"
+    volumes:
+      - "./CREATE_TABLES.sql:/docker-entrypoint-initdb.d/CREATE_TABLES.sql"
+      - "./var/database:/var/lib/mysql"
   phpmyadmin:
     image: phpmyadmin
     ports:
