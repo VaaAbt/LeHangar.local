@@ -15,4 +15,16 @@ class ProductController extends AbstractController
             'products' => $products
         ]);
     }
+
+    public function addProductToCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        if($_SESSION['cart'][$args['id']] == null){
+            $_SESSION['cart'][$args['id']] = 1;
+        } else {
+            $_SESSION['cart'][$args['id']] += 1;
+        }
+
+        return $response->withHeader('Location', '/products')->withStatus(200);
+
+    }
 }

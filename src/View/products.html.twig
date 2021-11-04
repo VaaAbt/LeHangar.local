@@ -7,13 +7,14 @@
     <div class="product-container">
             {% for val in products %}
                 <div class="product">
+                    <form method="post" action="/products/addToCart/{{ val.id }}" class="card col" id="{{ val.id }}" style="width: 18rem;">
                     <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
                     <div class="product-card">
                         <h5 class="product-title">{{ val.name }}</h5>
                         <p class="product-description">{{ val.description }}</p>
-                        <a href="#" class="product-btn">Commander</a>
+                        <input type="submit" value="Add to cart" class="btn btn-primary">
                     </div>
-                </div>
+                </form>
             {% endfor %}
     </div>
 {% endblock %}
