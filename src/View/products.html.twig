@@ -1,21 +1,19 @@
 {% extends './base.html.twig' %}
 {% block content %}
-    <div class="container mt-4">
+    <div class="page-title">
         <h1>Liste de produits</h1>
     </div>
 
-    <div class="container">
-        <div class="row row-cols-lg-5 g-lg-4">
+    <div class="product-container">
             {% for val in products %}
-                <div class="card col" style="width: 18rem;">
-                    <img src="{{ val.image }}" class="card-img-top" alt="produit">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ val.name }}</h5>
-                        <p class="card-text">{{ val.description }}</p>
-                        <a href="#" class="btn btn-primary">Commander</a>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
+                    <div class="product-card">
+                        <h5 class="product-title">{{ val.name }}</h5>
+                        <p class="product-description">{{ val.description }}</p>
+                        <a href="#" class="product-btn">Commander</a>
                     </div>
                 </div>
             {% endfor %}
-        </div>
     </div>
 {% endblock %}

@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FDF7F2;
+}
+
+.container {
+  margin: 20px 50px;
+}
+
+.page-title {
+  margin-left: 15px;
+  font-size: 12px;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #184e77;
+  color: white;
+  padding: 5px 10px;
+}
+
+.home-img {
+  position: relative;
+  text-align: center;
+}
+.home-img img {
+  width: 100%;
+  filter: blur(2px);
+}
+.home-img .text-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #184e77;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 20px;
+  background-color: white;
+}
+
+.home-section {
+  margin: auto;
+  margin-top: 50px;
+}
+.home-section a {
+  border-radius: 10px;
+  padding: 20px 50px;
+}
+
+.navbar {
+  width: 100%;
+  padding: 15px;
+}
+.navbar .navbar-container {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .navbar-title {
+  color: #184e77;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 24px;
+}
+.navbar .navbar-menu {
+  display: flex;
+}
+.navbar .navbar-menu ul {
+  display: flex;
+}
+.navbar .navbar-menu ul li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+.navbar .navbar-menu ul li a {
+  color: #184e77;
+  text-decoration: none;
+}
+.navbar .navbar-menu ul li a:hover {
+  border-bottom: 2px solid #184e77;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 20px;
+}
+.product-container .product {
+  margin: 15px;
+  width: 200px;
+  height: 300px;
+}
+.product-container .product .product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+}
+.product-container .product .product-card .product-btn {
+  background-color: #198755;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.footer ul li {
+  list-style-type: none;
+  margin: 10px;
+}
+.footer ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */

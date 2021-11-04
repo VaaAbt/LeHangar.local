@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FDF7F2;
+}
+
+.container {
+    margin: 20px 50px;
+}
+
+.page-title{
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: rgb(24, 78, 119);
+    color: white;
+    padding: 5px 10px;
+
+}
+
+// HOME
+
+.home-img {
+    position: relative;
+    text-align: center;
+
+    img{
+    width: 100%;  
+    filter: blur(2px);
+    }
+
+    .text-centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(24, 78, 119);
+        font-size: 28px;
+        font-weight: bold;
+        padding: 20px;
+        background-color: white;
+      }
+}
+
+.home-section {
+    margin: auto;
+    margin-top: 50px;
+
+    a {
+        border-radius: 10px;
+        padding: 20px 50px;
+    }
+
+}
+
+// NAVBAR
+
+.navbar {
+    width: 100%;
+    padding: 15px;
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar-title {
+        color: rgb(24, 78, 119);
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 24px;
+    }
+
+    .navbar-menu {
+        display: flex;
+        ul{
+            display: flex;
+
+            li {
+                list-style-type: none;
+                margin: 0 10px;
+                a {
+                    color: rgb(24, 78, 119);
+                    text-decoration: none;
+
+                    &:hover{
+                        border-bottom: 2px solid rgb(24, 78, 119);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// PRODUCT
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 20px;
+
+    .product {
+        margin: 15px;
+        width: 200px;
+        height: 300px;
+
+        .product-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
+
+            .product-btn {
+                background-color: #198755;
+                padding: 10px;
+                color: white;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+            
+        }
+    }
+}
+
+// FOOTER 
+
+.footer {
+    ul {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+
+        li {
+            list-style-type: none;
+            margin: 10px;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}

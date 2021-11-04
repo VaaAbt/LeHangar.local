@@ -1,6 +1,23 @@
 {% extends './base.html.twig' %}
 {% block content %}
-    <div class="container mt-4">
-        <h1>Liste de produits</h1>
-    </div>
+    <header class="home-img">
+        <img src="ressources/home-picture_1.jpeg">
+        <p class="text-centered">L'endroit de vos produits frais et bon marché.</p>
+    </header>
+    <main class="product-container">
+        {% for val in products %}
+            <div class="product">
+                <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
+                <div class="product-card">
+                    <h5 class="product-title">{{ val.name }}</h5>
+                    <p class="product-description">{{ val.description }}</p>
+                    <a href="#" class="product-btn">Commander</a>
+                </div>
+            </div>
+        {% endfor %}
+        <section class="home-section">
+            <a class="btn" href="/products">Consulter le catalogue complet</a>
+        </section>
+    </main>
+    {% include 'footer.html.twig' %}
 {% endblock %}

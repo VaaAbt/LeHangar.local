@@ -32,4 +32,21 @@ class Product extends Model
         return Product::all();
     }
 
+    public static function getRandomProduct($amount)
+    {
+        $lastProduct = Product::orderBy('id', 'desc')->first();
+        $min = 1;
+        $max = $lastProduct->id;
+
+        $products = array();
+
+        for ($i=0; $i < $amount; $i++) { 
+            $product_id = rand($min, $max);
+            $item = Product::where('id', '=', $product_id)->first();
+            array_push($products, $item);
+        }
+
+        return $products;
+    }
+
 }
