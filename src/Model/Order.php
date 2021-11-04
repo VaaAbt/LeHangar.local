@@ -26,4 +26,17 @@ class Order extends Model
         return $this->hasMany(listProducts::class, 'id_order', 'id');
     }
 
+    public function create($data){
+        $order = new Order();
+
+        $order->setAttribute('customer_name', $data['customer_name']);
+        $order->setAttribute('customer_email', $data['customer_email']);
+        $order->setAttribute('customer_phone', $data['customer_phone']);
+        $order->setAttribute('amount', $data['amount']);
+        $order->setAttribute('status', $data['status']);
+        $order->save();
+
+        return $order;
+    }
+
 }

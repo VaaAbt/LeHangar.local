@@ -19,4 +19,9 @@ $app->get('/products', [ProductController::class, 'getAllProducts']);
 $app->post('/products/addToCart/{id}', [ProductController::class, 'addProductToCart']);
 $app->get('/products/category/{id}', [ProductController::class, 'getProductsByCategory']);
 
+$app->get('/products/addToCart/{id}/addOne', [ProductController::class, 'addProductQuantityToCart']);
+
+$app->get('/products/addToCart/{id}/removeOne', [ProductController::class, 'removeProductQuantityToCart']);
+
 $app->get('/cart', [CartController::class, 'getCartView']);
+$app->post('/cart', [CartController::class, 'orderCart']);

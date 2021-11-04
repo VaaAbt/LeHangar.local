@@ -21,4 +21,15 @@ class listProducts extends Model
      */
     public $timestamps = false;
 
+    public function create($data){
+        $listproduct = new listProducts();
+
+        $listproduct->setAttribute('id_product', $data['id_product']);
+        $listproduct->setAttribute('id_order', $data['id_order']);
+        $listproduct->setAttribute('quantity', $data['quantity']);
+        $listproduct->save();
+
+        return $listproduct;
+    }
+
 }

@@ -5,19 +5,35 @@
         <p class="text-centered">L'endroit de vos produits frais et bon marché.</p>
     </header>
     <main class="product-container">
-        {% for val in products %}
-            <div class="product">
-                <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
-                <div class="product-card">
-                    <h5 class="product-title">{{ val.name }}</h5>
-                    <p class="product-description">{{ val.description }}</p>
-                    <a href="#" class="product-btn">Commander</a>
+        {% for product in products %}
+                <div class="product">
+                    <form method="post" action="/products/addToCart/{{ product.id }}" id="{{ product.id }}">
+                    <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
+                    <div class="product-card">
+                        <h5 class="product-title">{{ product.name }}</h5>
+                        <p class="product-description">{{ product.description }}</p>
+                        <input type="submit" value="Add to cart" class="btn">
+                    </div>
+                    </form>
                 </div>
-            </div>
         {% endfor %}
-        <section class="home-section">
-            <a class="btn" href="/products">Consulter le catalogue complet</a>
-        </section>
     </main>
+    <section class="home-section">
+        <a class="btn" href="/products">Consulter le catalogue complet</a>
+    </section>
+<section class="testimony-container">
+    <article class="testimony-card">
+        <img src="ressources/home-picture-testimony_1.jpeg" >
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </article>
+    <article class="testimony-card">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <img src="ressources/home-picture-testimony_2.jpeg" >
+    </article>
+    <article class="testimony-card">
+        <img src="ressources/home-picture-testimony_3.jpeg" >
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </article>
+</section>
     {% include 'footer.html.twig' %}
 {% endblock %}

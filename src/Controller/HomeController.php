@@ -10,7 +10,7 @@ class HomeController extends AbstractController
 {
     public function index(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        $products = Product::getRandomProduct(8);
+        $products = Product::getRandomProduct(6);
         return $this->render($response, 'home.html.twig', [
             'products' => $products
         ]);

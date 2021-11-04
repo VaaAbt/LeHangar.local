@@ -46,17 +46,18 @@
     </div>
 
     <div class="product-container">
-            {% for val in products %}
+            {% for product in products %}
                 <div class="product">
-                    <form method="post" action="/products/addToCart/{{ val.id }}" id="{{ val.id }}">
+                    <form method="post" action="/products/addToCart/{{ product.id }}" id="{{ product.id }}">
                     <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
                     <div class="product-card">
-                        <h5 class="product-title">{{ val.name }}</h5>
-                        <p class="product-description">{{ val.description }}</p>
+                        <h5 class="product-title">{{ product.name }}</h5>
+                        <p class="product-description">{{ product.description }}</p>
+                        <p class="product-price">{{ product.unit_price }} €</p>
                         <input type="submit" value="Add to cart" class="btn">
                     </div>
                     </form>
-                    </div>
+                </div>
             {% endfor %}
     </div>
 
