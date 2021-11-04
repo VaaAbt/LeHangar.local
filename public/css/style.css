@@ -1,95 +1,76 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
-  background-color: #FDF7F2;
-}
+  background-color: #FDF7F2; }
 
 .container {
-  margin: 20px 50px;
-}
+  margin: 20px 50px; }
 
 .page-title {
   margin-left: 15px;
-  font-size: 12px;
-}
+  font-size: 12px; }
 
 .btn {
   text-decoration: none;
   background-color: #184e77;
   color: white;
-  padding: 5px 10px;
-}
+  padding: 5px 10px; }
 
 .home-img {
   position: relative;
-  text-align: center;
-}
-.home-img img {
-  width: 100%;
-  filter: blur(2px);
-}
-.home-img .text-centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #184e77;
-  font-size: 28px;
-  font-weight: bold;
-  padding: 20px;
-  background-color: white;
-}
+  text-align: center; }
+  .home-img img {
+    width: 100%;
+    filter: blur(2px); }
+  .home-img .text-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #184e77;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    background-color: white; }
 
 .home-section {
   margin: auto;
-  margin-top: 50px;
-}
-.home-section a {
-  border-radius: 10px;
-  padding: 20px 50px;
-}
+  margin-top: 50px; }
+  .home-section a {
+    border-radius: 10px;
+    padding: 20px 50px; }
 
 .navbar {
   width: 100%;
-  padding: 15px;
-}
-.navbar .navbar-container {
-  display: flex;
-  justify-content: space-between;
-}
-.navbar .navbar-title {
-  color: #184e77;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 24px;
-}
-.navbar .navbar-menu {
-  display: flex;
-}
-.navbar .navbar-menu ul {
-  display: flex;
-}
-.navbar .navbar-menu ul li {
-  list-style-type: none;
-  margin: 0 10px;
-}
-.navbar .navbar-menu ul li a {
-  color: #184e77;
-  text-decoration: none;
-}
-.navbar .navbar-menu ul li a:hover {
-  border-bottom: 2px solid #184e77;
-}
-.navbar .navbar-menu ul li .cart-badge {
-  background-color: red;
-  padding: 2px;
-  color: white;
-  border-radius: 10px;
-}
+  padding: 15px; }
+  .navbar .navbar-container {
+    display: flex;
+    justify-content: space-between; }
+  .navbar .navbar-title {
+    color: #184e77;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 24px; }
+  .navbar .navbar-menu {
+    display: flex; }
+    .navbar .navbar-menu ul {
+      display: flex; }
+      .navbar .navbar-menu ul li {
+        list-style-type: none;
+        margin: 0 10px; }
+        .navbar .navbar-menu ul li a {
+          color: #184e77;
+          text-decoration: none; }
+          .navbar .navbar-menu ul li a:hover {
+            border-bottom: 2px solid #184e77; }
+        .navbar .navbar-menu ul li .cart-badge {
+          background-color: red;
+          padding: 2px;
+          color: white;
+          border-radius: 10px; }
 
 .product-container {
   display: flex;
@@ -97,39 +78,95 @@ body {
   width: 80%;
   justify-content: space-between;
   margin: auto;
-  margin-top: 20px;
-}
-.product-container .product {
-  margin: 15px;
-  width: 200px;
-  height: 300px;
-}
-.product-container .product .product-card {
+  margin-top: 20px; }
+  .product-container .product {
+    margin: 15px;
+    width: 200px;
+    height: 300px; }
+    .product-container .product .product-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100px; }
+      .product-container .product .product-card .product-btn {
+        background-color: #198755;
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none; }
+
+.hide {
+  display: none; }
+
+.sort_container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100px;
-}
-.product-container .product .product-card .product-btn {
-  background-color: #198755;
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-}
+  margin: 30px 0 30px; }
+  .sort_container .search_container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 50px 0 50px; }
+    .sort_container .search_container .search_bare {
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      width: 100%;
+      border: solid 1px black;
+      border-radius: 20px;
+      background-color: #EEEEEE;
+      padding: 5px; }
+      .sort_container .search_container .search_bare .search_icon {
+        width: 35px;
+        height: 35px; }
+      .sort_container .search_container .search_bare .search_input {
+        box-sizing: border-box;
+        width: 70%;
+        background-color: transparent;
+        border: none;
+        border-bottom: solid 1px black; }
+  .sort_container .filter_container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 50px 0 50px; }
+    .sort_container .filter_container .category_container {
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      width: 100%;
+      border-top: solid 1px black;
+      padding: 10px 0 10px 0; }
+      .sort_container .filter_container .category_container .category {
+        background-color: transparent;
+        border: solid 1px #174e77;
+        border-radius: 10px;
+        margin: 0 1% 0 1%; }
+        .sort_container .filter_container .category_container .category .category_name {
+          color: #174e77;
+          margin: 5px;
+          border: none;
+          background-color: transparent; }
+      .sort_container .filter_container .category_container .category-active {
+        order: 1;
+        background-color: #174e77;
+        border: none;
+        border-radius: 10px;
+        margin: 0 1% 0 1%; }
+        .sort_container .filter_container .category_container .category-active .category_name {
+          color: #FFFFFF;
+          margin: 5px;
+          border: none;
+          background-color: transparent; }
 
 .footer ul {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-}
-.footer ul li {
-  list-style-type: none;
-  margin: 10px;
-}
-.footer ul li a {
-  text-decoration: none;
-  color: black;
-}
+  margin-top: 40px; }
+  .footer ul li {
+    list-style-type: none;
+    margin: 10px; }
+    .footer ul li a {
+      text-decoration: none;
+      color: black; }
 
 /*# sourceMappingURL=style.css.map */

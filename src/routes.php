@@ -17,5 +17,6 @@ $app->get('/', [HomeController::class, 'index']);
 
 $app->get('/products', [ProductController::class, 'getAllProducts']);
 $app->post('/products/addToCart/{id}', [ProductController::class, 'addProductToCart']);
+$app->get('/products/category/{id}', [ProductController::class, 'getProductsByCategory']);
 
 $app->get('/cart', [CartController::class, 'getCartView']);
