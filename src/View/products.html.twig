@@ -7,14 +7,14 @@
     <div class="container">
         <div class="row row-cols-lg-5 g-lg-4">
             {% for val in products %}
-                <div class="card col" style="width: 18rem;">
+                <form method="post" action="/products/addToCart/{{ val.id }}" class="card col" id="{{ val.id }}" style="width: 18rem;">
                     <img src="{{ val.image }}" class="card-img-top" alt="produit">
                     <div class="card-body">
                         <h5 class="card-title">{{ val.name }}</h5>
                         <p class="card-text">{{ val.description }}</p>
-                        <a href="#" class="btn btn-primary">Commander</a>
+                        <input type="submit" value="Add to cart" class="btn btn-primary">
                     </div>
-                </div>
+                </form>
             {% endfor %}
         </div>
     </div>

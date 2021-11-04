@@ -15,3 +15,4 @@ use Slim\Routing\RouteCollectorProxy;
 $app->get('/', [HomeController::class, 'index']);
 
 $app->get('/products', [ProductController::class, 'getAllProducts']);
+$app->post('/products/addToCart/{id}', [ProductController::class, 'addProductToCart']);
