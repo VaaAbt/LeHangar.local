@@ -23,7 +23,7 @@
                 </li>
                 <li class="navbar-item">
                     <a href="/cart">Mon Panier</a>
-                    <span class="cart-badge">{{ cart | length != 0 ? cart | length : '' }}</span>
+                    <span class="{{ cart | length != 0 ? 'cart-badge': '' }}">{{ cart | length != 0 ? cart | length : '' }}</span>
                 </li>
             </ul>
         </div>
