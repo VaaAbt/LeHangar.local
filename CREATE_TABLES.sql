@@ -67,14 +67,14 @@ CREATE TABLE IF NOT EXISTS hangarlocal.listProducts
 
 /**INSERT GROWER**/
 INSERT INTO grower (name, location, email, password) VALUES ('Produits locaux du 54', '12 rue des Coteaux, 54000 Nancy', 'produitslocaux.54@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
-INSERT INTO grower (name, location, email, password) VALUES ('la Pépinière de Vent du Nord', '5 rue du Donjon, 54160 Pulligny', 'pepiniere.ventdunord@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
-INSERT INTO grower (name, location, email, password) VALUES ('le Verger de Paradis Vert', '2 rue des Hautes Ruelles, 54123 Viterne', 'vergerparadis.vert@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
-INSERT INTO grower (name, location, email, password) VALUES ('les Jardins du Perchoir', '34 rue du Souvenir, 88130 Charmes', 'jardins.perchoir@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
-INSERT INTO grower (name, location, email, password) VALUES ('le Champ du Chêne Moussu', '4 rue de l\'Eglise, 88130 Savigny', 'champ.chenemoussu@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
-INSERT INTO grower (name, location, email, password) VALUES ('les Pâturages des Falaises', '22 rue Paul Daum, 54280 Champenoux', 'paturage.falaises@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
-INSERT INTO grower (name, location, email, password) VALUES ('la Prairie de Gros Rire', '1 rue Saint-Pierre, 54760 Faulx', 'prairie.grodrire@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
-INSERT INTO grower (name, location, email, password) VALUES ('la Ferme du Phénix', '15 rue du Chaufour, 54170 Bioncourt', 'ferme.phenix@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
-INSERT INTO grower (name, location, email, password) VALUES ('la Ferme de Nouvelle Aube', '8 rue Louis Marin, 54160 Nomeny', 'ferme.aube@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+INSERT INTO grower (name, location, email, password) VALUES ('La Pépinière de Vent du Nord', '5 rue du Donjon, 54160 Pulligny', 'pepiniere.ventdunord@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+INSERT INTO grower (name, location, email, password) VALUES ('Le Verger de Paradis Vert', '2 rue des Hautes Ruelles, 54123 Viterne', 'vergerparadis.vert@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+INSERT INTO grower (name, location, email, password) VALUES ('Les Jardins du Perchoir', '34 rue du Souvenir, 88130 Charmes', 'jardins.perchoir@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+INSERT INTO grower (name, location, email, password) VALUES ('Le Champ du Chêne Moussu', '4 rue de l\'Eglise, 88130 Savigny', 'champ.chenemoussu@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+INSERT INTO grower (name, location, email, password) VALUES ('Les Pâturages des Falaises', '22 rue Paul Daum, 54280 Champenoux', 'paturage.falaises@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+INSERT INTO grower (name, location, email, password) VALUES ('La Prairie de Gros Rire', '1 rue Saint-Pierre, 54760 Faulx', 'prairie.grodrire@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+INSERT INTO grower (name, location, email, password) VALUES ('La Ferme du Phénix', '15 rue du Chaufour, 54170 Bioncourt', 'ferme.phenix@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+INSERT INTO grower (name, location, email, password) VALUES ('La Ferme de Nouvelle Aube', '8 rue Louis Marin, 54160 Nomeny', 'ferme.aube@gmail.com', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
 
 
 
@@ -90,43 +90,45 @@ INSERT INTO category VALUES (7, 'aromates', 'aromath');
 
 
 /**INSERT PRODUCT**/
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('carottes 1kg', 'carottes fraiches de l\'est, cultivés sur des terres non poluées par des pesticides.', 15.99, 1, 1);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('salade scarole', 'salade verte, arrosé à l\'eau de pluie et cultivée dans le sable', 1.8, 1, 2);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('haricots beurre 500g', 'haricots très bon pour les petits enfants.', 1.14, 1, 3);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('aubergine', 'aubergine violette, cultivé sur les flants de montagnes de l\'est.', 3, 1, 4);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('tomates 1kg', 'tomates cultivées en serre', 2.49, 1, 8);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('oignons 2kg', 'oignons', 1.2, 1, 2);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Carottes (1kg)', 'Carottes fraiches de l\'est, cultivés sur des terres non poluées par des pesticides.', 0.89, 1, 1);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Salade (la pièce)', 'Salade verte, arrosé à l\'eau de pluie et cultivée dans le sable', 0.99, 1, 2);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Haricots beurre (220g)', 'Haricots très bon pour les petits enfants.', 1.05, 1, 3);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Aubergine (la pièce)', 'Aubergine violette, cultivé sur les flants de montagnes de l\'est.', 1.19, 1, 4);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Tomates (1kg)', 'Tomates cultivées en serre.', 1.49, 1, 8);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Oignons (1kg)', 'Oignons.', 1.49, 1, 2);
 
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('pommes 2kg', 'pommes vertes grannysmith, ont poussés sur des arbres millénaires.', 7, 2, 5);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('poires 1kg', 'poires williams, arrosés au william peel.', 2.80, 2, 6);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('fraises 700g', 'fraises de cléry, en serre.', 5, 2, 7);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('mirabelles 3kg', 'mirabelles reines claude, sans pesticides.', 7.5, 2, 8);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('framboises 500g', 'framboises', 6.7, 2, 4);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('groseilles 300g', 'groseilles', 2.34, 2, 1);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Pommes (500g)', 'Pommes vertes grannysmith, ont poussés sur des arbres millénaires.', 0.99, 2, 5);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Poires (500g)', 'Poires williams, arrosés au william peel.', 0.99, 2, 6);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Fraises (500g)', 'Fraises de cléry, en serre.', 2.49, 2, 7);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Mirabelles (500g)', 'Mirabelles reines claude, sans pesticides.', 1.29, 2, 8);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Framboises (125g)', 'Framboises.', 1.49, 2, 4);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Groseilles (125g)', 'Groseilles.', 2.59, 2, 1);
 
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('pommes de terre 10kg', 'pommes de terre', 18, 3, 9);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('petits pois 1kg', 'petits pois, ramassés à la main.', 5, 3, 1);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('lentilles 500g', 'lentilles vertes, issus d\'une production responsable de l\'environnement', 1.8, 3, 2);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('pois chiches 1kg', 'pois chiches, cultivés en plein été.', 2.5, 3, 3);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Pommes de terre (1,5kg)', 'Pommes de terre.', 0.99, 3, 9);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Petits pois (1kg)', 'Petits pois, ramassés à la main.', 1.39, 3, 1);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Lentilles (500g)', 'Lentilles vertes, issus d\'une production responsable de l\'environnement.', 1.29, 3, 2);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Pois chiches (500g)', 'Pois chiches, cultivés en plein été.', 0.79, 3, 3);
 
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('orges 1kg', 'orges, ', 0.2, 4, 4);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('farine de blé 1kg', 'farine', 0.5, 4, 5);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('seigle 1kg', 'seigle de bonne qualité.', 1, 4, 6);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('riz 2kg', 'riz long', 1.6, 4, 7);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Orges (1kg)', 'Orges.', 0.49, 4, 4);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Farine de blé (1kg)', 'Farine.', 0.59, 4, 5);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Seigle (1kg)', 'Seigle de bonne qualité.', 0.59, 4, 6);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Riz (1kg)', 'Riz long.', 1.69, 4, 7);
 
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('lait de vache 1L', 'lait de vache élevées en plein air.', 0.8, 5, 8);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('buche fromage de chèvre 200g', 'buche de chèvre, avec du lait de chèvre élevées en montagne.', 2, 5, 9);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('yahourt nature 1kg', 'yahourt fermenté en cave.', 1.63, 5, 1);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('roquefort 300g', 'roquefort, AOC', 5, 5, 2);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Lait de vache (1L)', 'Lait de vache élevées en plein air.', 0.78, 5, 8);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Bûche fromage de chèvre (1kg)', 'Buche de chèvre, avec du lait de chèvre élevées en montagne.', 8.15, 5, 9);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Yaourt nature (1kg)', 'Yaourt fermenté en cave.', 1.63, 5, 1);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Roquefort (1kg)', 'Roquefort AOC & AOP.', 11.27, 5, 2);
 
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('poulet fermier entier', 'poulet élevées en cage de tungstène.', 12.5, 6, 3);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('boeuf haché 2kg', 'boeuf élevé en prairie.', 26.67, 6, 4);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('jambon', 'cochons élévés en plein air.', 60, 6, 5);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('lapin entier', 'lapin élevé au grain.', 10.89, 6, 6);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Poulet fermier (la pièce)', 'Poulet élevées en cage de tungstène.', 11.32, 6, 3);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Boeuf haché (500g)', 'Boeuf élevé en prairie.', 4.95, 6, 4);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Jambon (200g)', 'Cochons élévés en plein air.', 1.99, 6, 5);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Lapin (la pièce)', 'Lapin élevé au grain.', 13.37, 6, 6);
 
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('thym 100g', 'thym tin tin tin.', 7, 7, 7);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('persil 500g', 'persil, quelle heure est-t-il madame persil ?', 10.43, 7, 8);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('assortiment d\'herbes aromatiques 300g', 'laurier, thym, romarin, origan, herbes de provences', 4.36, 7, 9);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('romarin 200g', 'romarin a tu des patins ?', 0.6, 7, 1);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Thym (100g)', 'Thym tin tin tin.', 3.50, 7, 7);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Romarin (100g)', 'Romarin as-tu des patins ?', 2.70, 7, 7);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Persil (100g)', 'Persil, quelle heure est-t-il madame persil ?', 1.80, 7, 8);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Origan (100g)', 'Origan frais.', 2.70, 7, 8);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Herbes de Provence (100g)', 'De Provence.', 1.07, 7, 8);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Assortiment d\'herbes aromatiques (100g)', 'Thym, romarin, persil, origan, herbes de Provence.', 2.49, 7, 9);
 
 COMMIT;
