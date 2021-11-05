@@ -46,6 +46,7 @@ class CartController extends AbstractController
             }
         }
 
+        unset($_SESSION['cart']);
         return $this->render($response, 'home.html.twig');
     }
 }
