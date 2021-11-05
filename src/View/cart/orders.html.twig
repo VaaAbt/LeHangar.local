@@ -1,0 +1,25 @@
+<div class="cart-orders">
+      <div class="cart-container">
+    {% for product in products %}
+      <div class="cart-product">
+          <img src="https://via.placeholder.com/100" class="cart-img" alt="produit" />
+          <div class="product-card">
+            <h5 class="cart-title">
+              <a href="/detailedProduct/{{ product.id }}">{{ product[0].name }}</a>
+            </h5>
+            <p class="cart-description">
+              {{ product[0].description }}
+            </p>
+            <p class="cart-price">
+                {{ product[0].unit_price }} €
+            </p>
+            <div class="cart-quantity">
+                <a class="btn-add-quantity" href="/products/addToCart/{{product[0].id}}/addOne">+</a>
+                <span>{{ product[1] }}</span>
+                <a class="btn-remove-quantity" href="/products/addToCart/{{product[0].id}}/removeOne"> -</a>
+            </div>
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+  </div>
