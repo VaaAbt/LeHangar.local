@@ -254,17 +254,24 @@ body {
 }
 
 .detailed-grower-container {
-  display: grid;
-  grid-template-areas: "grower-img grower-card";
-  grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  grid-gap: 20px;
-  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 100px;
 }
 .detailed-grower-container p, .detailed-grower-container h5 {
   font-size: large;
 }
 .detailed-grower-container .grower {
+  display: grid;
+  grid-template-areas: "grower-img grower-card";
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-gap: 20px;
   height: 200px;
 }
 .detailed-grower-container .grower .grower-img {
