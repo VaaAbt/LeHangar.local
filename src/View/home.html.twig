@@ -11,7 +11,11 @@
                     <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
                     <div class="product-card">
                         <h5 class="product-title"><a href="/detailedProduct/{{ product.id }}">{{ product.name }}</a></h5>
+                        <p class="product-grower"><a href="/detailedGrower/{{ product.id_grower }}">Producteur</a></p>
                         <p class="product-description">{{ product.description }}</p>
+                        <input class="btn-add-quantity" type="button" onclick="incrementValue()" value="+" />
+                        <input type="text" id="number" name="quantity" value="1"size="1"/>
+                        <input class="btn-remove-quantity" type="button" onclick="decrementValue()" value="-" />
                         <input type="submit" value="Add to cart" class="btn">
                     </div>
                     </form>
@@ -35,5 +39,6 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </article>
 </section>
-    {% include 'footer.html.twig' %}
+{% include 'footer.html.twig' %}
+<script src="/js/products.js" type="application/javascript" async></script>
 {% endblock %}
