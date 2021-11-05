@@ -1,0 +1,38 @@
+<div class="filter_container">
+  <h4 class="filter_title">
+    Filtrer
+  </h4>
+
+  <div class="category_container">
+    {% for val in category %}
+      {% if category_active is defined %}
+        {% if val.id == category_active %}
+          <form action="/products" method="get" class="category-active">
+            <input class="category_name"
+              type="submit"
+              class="btn-filter"
+              value="{{ val.name }}" />
+          </form>
+        {% else %}
+          <form action="/products/category/{{ val.id }}"
+            method="get"
+            class="category">
+            <input class="category_name"
+              type="submit"
+              class="btn-filter"
+              value="{{ val.name }}" />
+          </form>
+        {% endif %}
+      {% else %}
+        <form action="/products/category/{{ val.id }}"
+          method="get"
+          class="category">
+          <input class="category_name"
+            type="submit"
+            class="btn-filter"
+            value="{{ val.name }}" />
+        </form>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
