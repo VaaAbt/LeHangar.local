@@ -414,6 +414,37 @@ body{
     }
 }
 
+// GROWER
+
+.grower-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: flex-start;
+    margin: auto;
+    margin-top: 20px;
+
+    .grower {
+        margin: 15px;
+        width: 200px;
+        height: 300px;
+
+        .grower-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
+
+            .grower-btn {
+                background-color: #198755;
+                padding: 10px;
+                color: white;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+        }
+    }
+}
 
 // FOOTER 
 
