@@ -25,6 +25,7 @@ $app->get('/products/category/{id}', [ProductController::class, 'getProductsByCa
 $app->get('/products/addToCart/{id}/addOne', [ProductController::class, 'addProductQuantityToCart']);
 
 $app->get('/products/addToCart/{id}/removeOne', [ProductController::class, 'removeProductQuantityToCart']);
+$app->get('/products/addToCart/{id}/removeAll', [ProductController::class, 'removeProductFromCart']);
 
 $app->get('/cart', [CartController::class, 'getCartView']);
 

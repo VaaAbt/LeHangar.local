@@ -11,7 +11,7 @@ class listProducts extends Model
      *
      * @var string
      */
-    protected $table = 'listproducts';
+    protected $table = 'listProducts';
 
     /**
      * Disable default timestamps columns
