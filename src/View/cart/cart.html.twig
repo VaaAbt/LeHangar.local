@@ -1,61 +1,10 @@
 {% extends './base.html.twig' %}
 {% block content %}
-  <div class="page-title">
-    <h1>
-      Mon panier
-    </h1>
-  </div>
 
 <div class="cart-summary">
-    <div class="cart-orders">
-      <div class="cart-container">
-    {% for product in products %}
-      <div class="cart-product">
-          <img src="https://via.placeholder.com/100" class="product-img" alt="produit" />
-          <div class="product-card">
-            <h5 class="product-title">
-              <a href="/detailedProduct/{{ product.id }}">{{ product[0].name }}</a>
-            </h5>
-            <p class="cart-description">
-              {{ product[0].description }}
-            </p>
-            <p class="cart-price">
-                {{ product[0].unit_price }} €
-            </p>
-            <div class="cart-quantity">
-                <a class="btn-add-quantity" href="/products/addToCart/{{product[0].id}}/addOne">+</a>
-                <p>{{ product[1] }}</p>
-                <a class="btn-remove-quantity" href="/products/addToCart/{{product[0].id}}/removeOne"> -</a>
-            </div>
-          </div>
-      </div>
-    {% endfor %}
-  </div>
-  </div>
-    <div class="div2"> 
-            <form action="" method="post">
-
-            <div class="form-group">
-               <label for="customer_name">Name</label>
-               <input type="text" id="customer_name" name="customer_name">
-            </div>
-            <div class="form-group">
-               <label for="customer_email">email</label>
-               <input type="text" id="customer_email" name="customer_email">
-            </div>
-            <div class="form-group">
-               <label for="customer_phone">phone</label>
-               <input type="text" id="customer_phone" name="customer_phone">
-            </div>
-
-            <input type="submit" value="Passer la commande" class="btn">
-        </form>
-    </div>
-    <div class="div3"> 
-        Somme total : {{ total }}
-
-    </div>
-    <div class="div4"> </div>
+    {% include 'cart/orders.html.twig' %}
+    {% include 'cart/form.html.twig' %}
+    {% include 'cart/resume.html.twig' %}
 </div>
 
 {% endblock %}
