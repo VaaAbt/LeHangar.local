@@ -19,9 +19,11 @@ class Cart
     }
 
     public function checkIfInCart($product_id){
-        foreach ($_SESSION['cart'] as $product) {
-            if($product[0] == $product_id){
-                return true;
+        if(isset($_SESSION['cart'])){
+            foreach ($_SESSION['cart'] as $product) {
+                if($product[0] == $product_id){
+                    return true;
+                }
             }
         }
         return false;
@@ -57,7 +59,12 @@ class Cart
             }
             $_SESSION['cart'] = $arr;
         }else{
-            array_push($_SESSION['cart'], [$product_id, $quantity]);
+            if(isset($_SESSION['cart'])){
+                array_push($_SESSION['cart'], [$product_id, $quantity]);
+            }else{
+                $_SESSION['cart'] = array();
+                array_push($_SESSION['cart'], [$product_id, $quantity]);
+            }
         }
         return true;
     }

@@ -59,13 +59,9 @@ class ProductController extends AbstractController
 
     public function addDetailedProductToCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        if(isset($_SESSION['cart']) == NULL){
-            $arr = array();
-            array_push($arr, [Product::getProductById($args['id'])->id, 1]);
-            $_SESSION['cart'] = $arr;
-        }else{
-            array_push($_SESSION['cart'], [Product::getProductById($args['id'])->id, 1]);
-        }
+        $data = $request->getParsedBody();
+        
+        Cart::addMultipleProductQuantity($args['id'],$data['quantity']);
 
         //$url = '/detailedProduct/' . $args['id'];
 

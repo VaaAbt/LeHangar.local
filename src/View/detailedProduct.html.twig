@@ -12,12 +12,10 @@
                         <p class="product-category">Categorie : {{ category.name }}</p>
                         <p class="product-description">{{ product.description }}</p>
                         <p class="product-price">{{ product.unit_price }} €</p>
-                        <form>
-                            <input type="button" onclick="incrementValue()" value="+" />
-                            <input type="text" id="number" value="1"size="1"/>
-                            <input type="button" onclick="decrementValue()" value="-" />
-                        </form>
                         <form method="post" action="/detailedProduct/addToCart/{{ product.id }}" id="{{ product.id }}">
+                            <input type="button" onclick="incrementValue()" value="+" />
+                            <input type="text" id="number" name="quantity" value="1"size="1"/>
+                            <input type="button" onclick="decrementValue()" value="-" />
                             <input type="submit" value="Add to cart" class="btn">
                         </form>
                     </div>
