@@ -11,8 +11,8 @@ class GrowerController extends AbstractController
     public function getAllGrowers(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         $growers = Grower::getAll();
-        return $this->render($response, 'products.html.twig', [
-            'products' => $growers
+        return $this->render($response, 'grower.html.twig', [
+            'growers' => $growers
         ]);
     }
 
