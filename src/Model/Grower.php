@@ -26,4 +26,14 @@ class Grower extends Model
     {
         return $this->hasMany(Product::class, 'id_grower', 'id');
     }
+
+    public static function getAll()
+    {
+        return Grower::all();
+    }
+
+    public static function getGrowerById($id)
+    {
+        return Grower::where('id','=',$id)->first();
+    }
 }

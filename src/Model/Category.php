@@ -25,4 +25,14 @@ class Category extends Model
     {
         return $this->hasMany(Product::class, 'id_category', 'id');
     }
+
+    public static function getAll()
+    {
+        return Category::all();
+    }
+
+    public static function getCategoryById($id)
+    {
+        return Category::where('id','=',$id)->first();
+    }
 }

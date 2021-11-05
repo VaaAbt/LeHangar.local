@@ -23,3 +23,6 @@ $app->get('/products/addToCart/{id}/addOne', [ProductController::class, 'addProd
 $app->get('/products/addToCart/{id}/removeOne', [ProductController::class, 'removeProductQuantityToCart']);
 
 $app->get('/cart', [CartController::class, 'getCartView']);
+
+$app->get('/detailedProduct/{id}', [ProductController::class, 'getProductById']);
+$app->post('/detailedProduct/addToCart/{id}', [ProductController::class, 'addDetailedProductToCart']);

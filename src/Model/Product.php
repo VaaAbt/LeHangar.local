@@ -26,6 +26,11 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'id', 'id_category');
     }
 
+    public function grower(): BelongsTo
+    {
+        return $this->belongsTo(Grower::class, 'id', 'id_grower');
+    }
+
     public static function getProductById($id){
         return Product::where('id', '=', $id)->first();
     }
@@ -52,4 +57,20 @@ class Product extends Model
         return $products;
     }
 
+    public static function getRandomProductSameCategory($category,$amount)
+    {
+        $lastProduct = Product::where("id_category", "=", $category)->orderBy('id', 'desc')->first();
+        $min = 1;
+        $max = $lastProduct->id;
+
+        $products = array();
+
+        for ($i=0; $i < $amount; $i++) { 
+            $product_id = rand($min, $max);
+            $item = Product::where('id', '=', $product_id)->first();
+            array_push($products, $item);
+        }
+
+        return $products;
+    }
 }
