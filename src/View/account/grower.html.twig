@@ -38,7 +38,37 @@
         </div>
 
         <div class="grower_orders">
+            <h3 class="grower_orders-title">Mes Commandes</h3>
 
+            <div class="grower_orders-list">
+                {% for idproductsQt in listProducts %}
+                    <div class="order">
+                        <div class="order_products-list">
+                            {% for prod in productsQt %}
+                            {% for key, item in prod %}
+                                {% if key == 0 %}
+                                    <div class="order-products">
+                                    <img src="https://via.placeholder.com/200/088e8f/ffffff" class="product-img" alt="produit">
+                                    <div class="product_details">
+                                    <p class="product_name">{{ item.name }}</p>
+                                    <p class="product_description">{{ item.description }}</p>
+                                {% elseif key == 1 %}
+                                    </div>
+                                    <div class="products-quantity">
+                                        <p class="product_quantity">{{ item }}</p>
+                                    </div>
+                                {% endif %}
+                                    </div>
+                            {% endfor %}
+                            {% endfor %}
+                        </div>
+                        <div class="order_buttons">
+                            <button class="order_btn-accept">Accepter</button>
+                            <button class="order_btn-decline">Refuser</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
 
     </div>
