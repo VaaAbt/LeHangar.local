@@ -14,10 +14,10 @@
                         <p class="product-description">{{ product.description }}</p>
                         <p class="product-price">{{ product.unit_price }} €</p>
                         <form method="post" action="/detailedProduct/addToCart/{{ product.id }}" id="{{ product.id }}">
-                            <input type="button" onclick="incrementValue()" value="+" />
-                            <input type="text" id="number" name="quantity" value="1"size="1"/>
-                            <input type="button" onclick="decrementValue()" value="-" />
-                            <input type="submit" value="Add to cart" class="btn">
+                        <input class="btn-add-quantity" id="button-add" type="button" onclick="incrementValue('{{ product.id }}')" value="+" />
+                        <input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
+                        <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
+                        <input type="submit" value="Add to cart" class="btn">
                         </form>
                     </div>
                 </div>
@@ -32,14 +32,14 @@
                     <div class="product-card">
                         <h5 class="product-title"><a href="/detailedProduct/{{ product.id }}">{{ product.name }}</a></h5>
                         <p class="product-description">{{ product.description }}</p>
-                        <input type="button" onclick="incrementValue()" value="+" />
-                        <input type="text" id="number" name="quantity" value="1"size="1"/>
-                        <input type="button" onclick="decrementValue()" value="-" />
+                        <input class="btn-add-quantity" id="{{ product.id }}" type="button" onclick="incrementValue('{{ product.id }}')" value="+" />
+                        <input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
+                        <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
                         <input type="submit" value="Add to cart" class="btn">
                     </div>
                     </form>
                 </div>
         {% endfor %}
     </main>
-    <script src="/js/detailedProduct.js" type="application/javascript" async></script>
+    <script src="/js/products.js" type="application/javascript" async></script>
 {% endblock %}

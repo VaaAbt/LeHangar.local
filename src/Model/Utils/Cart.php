@@ -88,4 +88,14 @@ class Cart
         $_SESSION['cart'] = $arr;
     }
 
+    public function removeProduct($product_id){
+        $arr = array();
+        foreach ($_SESSION['cart'] as $product) {
+            if($product[0] != $product_id){
+                array_push($arr, $product);
+            }
+        }
+        $_SESSION['cart'] = $arr;
+    }
+
 }
