@@ -36,12 +36,14 @@ class CartController extends AbstractController
             'status' => '0',
         ]);
 
-        foreach ($_SESSION['cart'] as $product) {
-            $newOrder = listProducts::create([
-                'id_product' => $product[0]->id,
-                'id_order' => $customer->id,
-                'quantity' => $product[1] 
-            ]);
+        if(isset($_SESSION['cart'])){
+            foreach ($_SESSION['cart'] as $product) {
+                $newOrder = listProducts::create([
+                    'id_product' => $product[0]->id,
+                    'id_order' => $customer->id,
+                    'quantity' => $product[1] 
+                ]);
+            }
         }
     }
 }
