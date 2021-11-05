@@ -6,6 +6,7 @@ use App\Model\Product;
 use App\Model\Grower;
 use App\Model\Category;
 use App\Model\Utils\Cart;
+use App\Model\Utils\FlashMessages;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -52,6 +53,7 @@ class ProductController extends AbstractController
             }
         }
 
+        FlashMessages::set('added', 'Le produit a bien été ajouté à votre panier.');
         return $response->withHeader('Location', '/products')->withStatus(200);
     }
 
@@ -63,7 +65,7 @@ class ProductController extends AbstractController
         
         Cart::addMultipleProductQuantity($args['id'],$data['quantity']);
 
-        //$url = '/detailedProduct/' . $args['id'];
+        FlashMessages::set('added', 'Le produit a bien été ajouté à votre panier.');
 
         return $response->withHeader('Location', '/detailedProduct/' . $args['id'])->withStatus(200);
     }

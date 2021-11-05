@@ -21,9 +21,9 @@ class AuthController extends AbstractController
 
         if (Auth::attempt($data['email'], $data['password'], $data['type'])) { // login success
             if($data['type'] === "grower"){
-                return $response->withHeader('Location', '/grower/myPage/')->withStatus(302);
+                return $response->withHeader('Location', '/grower/myPage/' .$_SESSION['auth'])->withStatus(302);
             } else{
-                return $response->withHeader('Location', '/manager/myPage/')->withStatus(302);
+                return $response->withHeader('Location', '/manager/myPage/' .$_SESSION['auth'])->withStatus(302);
             }
         }
 

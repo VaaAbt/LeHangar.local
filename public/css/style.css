@@ -424,7 +424,7 @@ body {
 .cart-summary {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
@@ -508,11 +508,63 @@ body {
   border-radius: 10px;
   box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
 }
+.cart-summary .cart-form .form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  width: 60%;
+}
+.cart-summary .cart-form .form-group label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.cart-summary .cart-form .form-group input {
+  font-size: 16px;
+  line-height: 28px;
+  padding: 8px 16px;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid rgba(126, 126, 126, 0.397);
+  border-radius: 4px;
+  outline-color: rgba(84, 105, 212, 0.5);
+  background-color: white;
+}
+.cart-summary .cart-form .btn {
+  margin: 20px;
+  color: #fff;
+  background-color: #2f70d1;
+  border: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.cart-summary .cart-form .btn:hover {
+  color: #fff;
+  background-color: #0b5ed7;
+}
 .cart-summary .cart-sum {
   grid-area: 3/1/4/3;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+  padding: 50px;
+}
+.cart-summary .cart-sum span {
+  font-weight: bold;
+}
+.cart-summary .cart-sum .infos {
+  margin-top: 20px;
+  background-color: #dfffe6;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .grower-container {
@@ -558,6 +610,20 @@ body {
 .footer p {
   text-align: center;
   opacity: 0.6;
+}
+
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
 }
 
 /*# sourceMappingURL=style.css.map */
