@@ -25,7 +25,6 @@ body {
 }
 .home-img img {
   width: 100%;
-  filter: blur(2px);
 }
 .home-img .text-centered {
   position: absolute;
@@ -343,6 +342,7 @@ body {
   border: 1px solid rgba(204, 204, 204, 0.589);
   padding: 5px;
   font-size: 18px;
+  width: 40%;
   vertical-align: middle;
 }
 .sort-container .filter-container {
@@ -352,6 +352,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.sort-container .filter-container .category-container::after {
+  content: "";
+  flex: auto;
 }
 .sort-container .filter-container .category-container .category-active .category-name {
   background-color: #d12f2f;

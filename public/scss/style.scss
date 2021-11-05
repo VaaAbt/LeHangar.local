@@ -27,7 +27,7 @@ body{
 
     img{
     width: 100%;  
-    filter: blur(2px);
+    // filter: blur(2px);
     }
 
     .text-centered {
@@ -392,6 +392,7 @@ body{
             border: 1px solid rgba(204, 204, 204, 0.589);
             padding: 5px;
             font-size: 18px;
+            width: 40%;
             vertical-align: middle;
         }
     }
@@ -403,6 +404,12 @@ body{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            flex-wrap: wrap;
+
+            &::after{
+                content:"";
+                flex:auto;
+            }
 
             .category-active{
                 .category-name{
