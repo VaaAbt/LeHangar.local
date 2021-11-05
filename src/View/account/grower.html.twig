@@ -1,7 +1,7 @@
 {% extends 'account/base.html.twig' %}
 {% block content %}
-    <div class="container grower_page" style="max-width: 600px;">
-        <h1 class="mb-4">Page Producteur</h1>
+    <div class="grower_page">
+        <h1 class="grower_page-title">Page Producteur</h1>
 
         {% if has_flash('credentials') %}
             <div class="alert alert-danger">
@@ -20,8 +20,6 @@
             <div class="grower_products-list">
                 {% for product in products %}
                     <div class="product">
-
-                        <div class="product">
                             <div class="product-card">
                                 <p class="product-title">{{ product.name }}</p>
                                 <p class="product-description">{{ product.description }}</p>
@@ -29,8 +27,6 @@
                                 <button class="product-btn">Editer</button>
                                 <img src="https://via.placeholder.com/200/088e8f/ffffff" class="product-img" alt="produit">
                             </div>
-                        </div>
-
                     </div>
                 {% endfor %}
             </div>
