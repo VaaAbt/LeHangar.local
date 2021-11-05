@@ -12,7 +12,7 @@ class AuthController extends AbstractController
 
     public function loginView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        return $this->render($response, 'auth/login.html.twig');
+        return $this->render($response, 'login.html.twig');
     }
 
     public function login(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
@@ -20,7 +20,11 @@ class AuthController extends AbstractController
         $data = $request->getParsedBody();
 
         if (Auth::attempt($data['email'], $data['password'], $data['type'])) { // login success
-            return $response->withHeader('Location', '/')->withStatus(302);
+            if($data['type'] === "grower"){
+                return $response->withHeader('Location', '/grower/myPage/')->withStatus(302);
+            } else{
+                return $response->withHeader('Location', '/manager/myPage/')->withStatus(302);
+            }
         }
 
         FlashMessages::set('credentials', 'The credentials are invalid.');
@@ -60,12 +64,12 @@ class AuthController extends AbstractController
         }
 
         return $response->withHeader('Location', '/signup')->withStatus(422);
-    }
+    }**/
 
     public function logout(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         Auth::logout();
         return $response->withHeader('Location', '/')->withStatus(302);
-    }**/
+    }
 
 }

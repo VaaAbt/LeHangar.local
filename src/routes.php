@@ -1,6 +1,7 @@
 <?php
 /** @var App $app */
 
+use App\Controller\AuthController;
 use App\Controller\AboutController;
 use App\Controller\GrowerController;
 use App\Controller\HomeController;
@@ -33,6 +34,12 @@ $app->post('/cart', [CartController::class, 'orderCart']);
 
 $app->get('/growers', [GrowerController::class, 'getAllGrowers']);
 
+$app->get('/login', [AuthController::class, 'loginView']);
+$app->post('/login', [AuthController::class, 'login']);
+
+$app->get('/logout', [AuthController::class, 'logout']);
+
 $app->get('/detailedGrower/{id}', [GrowerController::class, 'getGrowerById']);
 
 $app->get('/about', [AboutController::class, 'about']);
+

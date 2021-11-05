@@ -29,7 +29,7 @@ class ProductController extends AbstractController
 
         $products = Product::getRandomProductSameCategory(1,4);
 
-        return $this->render($response, 'detailedProduct.html.twig', [
+        return $this->render($response, 'products/detailedProduct.html.twig', [
             'product' => $product,
             'grower' => $grower,
             'category' => $category,

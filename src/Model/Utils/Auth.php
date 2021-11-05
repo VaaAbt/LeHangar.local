@@ -56,7 +56,7 @@ class Auth
             self::$_account = $user;
         }
 
-        return [self::$_account, $type];
+        return [self::$_account, $user->getAttribute('id')];
     }
 
     /**
