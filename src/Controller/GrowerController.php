@@ -52,7 +52,6 @@ class GrowerController extends AbstractController
         return $this->render($response, 'account/grower.html.twig', [
             'products' => $products,
             'listProducts' => $listProds,
-            'orders' => $orders,
             'grower_infos' => $informations
         ]);
     }
