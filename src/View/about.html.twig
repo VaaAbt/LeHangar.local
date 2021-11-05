@@ -1,0 +1,19 @@
+{% extends './base.html.twig' %}
+{% block content %}
+    <header class="home-img">
+        <img src="ressources/home-picture_1.jpeg">
+        <p class="text-centered">L'endroit de vos produits frais et bon marché.</p>
+    </header>
+    <section class="authors-container">
+        <article class="description-container">
+            Cette application web a été réalisé par :
+        </article>
+        <article class="authors-name">
+            <p>AUBERTIN Valentin</p>
+            <p>FRISSON Pierre-Alexandre</p>
+            <p>LE NALINEC Léopold</p>
+            <p>ORIAS Théo</p>
+        </article>
+    </section>
+    {% include 'footer.html.twig' %}
+{% endblock %}
