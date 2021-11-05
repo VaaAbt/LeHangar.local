@@ -31,4 +31,8 @@ class Category extends Model
         return Category::all();
     }
 
+    public static function getCategoryById($id)
+    {
+        return Category::where('id','=',$id)->first();
+    }
 }

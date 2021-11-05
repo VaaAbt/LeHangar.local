@@ -32,4 +32,8 @@ class Grower extends Model
         return Grower::all();
     }
 
+    public static function getGrowerById($id)
+    {
+        return Grower::where('id','=',$id)->first();
+    }
 }

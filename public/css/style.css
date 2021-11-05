@@ -145,6 +145,82 @@ body {
   padding: 2px;
 }
 
+.detailed-product-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.detailed-product-container p, .detailed-product-container h5 {
+  font-size: large;
+}
+.detailed-product-container .product {
+  display: grid;
+  grid-template-areas: "product-img product-card";
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  height: 200px;
+}
+.detailed-product-container .product .product-img {
+  grid-area: product-img;
+}
+.detailed-product-container .product .product-card {
+  grid-area: product-card;
+  justify-content: space-between;
+  height: 100px;
+}
+.detailed-product-container .product .product-card .btn {
+  background-color: #198755;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.detailed-product-container .product .product-card .product-price {
+  font-weight: bold;
+  padding: 2px;
+}
+
+.same-product-title {
+  text-align: center;
+}
+
+.same-product-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+}
+.same-product-container .product {
+  margin: 15px;
+  width: 200px;
+  height: 300px;
+}
+.same-product-container .product .product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+}
+.same-product-container .product .product-card .product-btn {
+  background-color: #198755;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.same-product-container .product .product-card .product-price {
+  font-weight: bold;
+  padding: 2px;
+}
+
 .hide {
   display: none;
 }
@@ -273,6 +349,33 @@ body {
 .cart-summary .div4 {
   border: 1px solid black;
   grid-area: 4/3/6/6;
+}
+
+.grower-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: flex-start;
+  margin: auto;
+  margin-top: 20px;
+}
+.grower-container .grower {
+  margin: 15px;
+  width: 200px;
+  height: 300px;
+}
+.grower-container .grower .grower-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+}
+.grower-container .grower .grower-card .grower-btn {
+  background-color: #198755;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 .footer ul {

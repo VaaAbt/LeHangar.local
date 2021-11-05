@@ -1,0 +1,62 @@
+{% extends './base.html.twig' %}
+{% block content %}
+    <div class="page-title">
+        <h1>Détails du Produit</h1>
+    </div>
+    <div class="detailed-product-container">
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
+                    <div class="product-card">
+                        <h5 class="product-title">{{ product.name }}</h5>
+                        <p class="product-grower">Producteur : {{ grower.name }}</p>
+                        <p class="product-category">Categorie : {{ category.name }}</p>
+                        <p class="product-description">{{ product.description }}</p>
+                        <p class="product-price">{{ product.unit_price }} €</p>
+                        <form method="post" action="/detailedProduct/addToCart/{{ product.id }}" id="{{ product.id }}">
+                            <input type="submit" value="Add to cart" class="btn">
+                        </form>
+                        <form>
+                            <input type="button" onclick="incrementValue()" value="+" />
+                            <input type="text" id="number" value="1"/>
+                            <input type="button" onclick="decrementValue()" value="-" />
+                        </form>
+                    </div>
+                </div>
+    </div>
+
+    <h2 class="same-product-title">Produits dans la même categorie</h2>
+    <main class="same-product-container">
+        {% for product in products %}
+                <div class="product">
+                    <form method="post" action="/detailedProduct/addToCart/{{ product.id }}" id="{{ product.id }}">
+                    <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
+                    <div class="product-card">
+                        <h5 class="product-title">{{ product.name }}</h5>
+                        <p class="product-description">{{ product.description }}</p>
+                        <input type="submit" value="Add to cart" class="btn">
+                    </div>
+                    </form>
+                </div>
+        {% endfor %}
+    </main>
+
+    <script>
+        function incrementValue()
+        {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('number').value = value;
+        }
+
+        function decrementValue()
+        {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            if(value > 1){
+                value--;
+            }
+            document.getElementById('number').value = value;
+        }
+    </script>
+{% endblock %}

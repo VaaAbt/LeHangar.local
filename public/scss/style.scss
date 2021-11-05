@@ -169,6 +169,96 @@ body{
 }
 
 
+// DETAILED PRODUCT
+
+.detailed-product-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+
+    p,h5{
+        font-size: large;
+    }
+
+    .product{
+        display: grid;
+        grid-template-areas: "product-img product-card";
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+        height: 200px;
+
+        .product-img{
+            grid-area: product-img;
+        }
+        
+        .product-card{
+            grid-area: product-card;
+            justify-content: space-between;
+            height: 100px;
+
+            .btn {
+                background-color: #198755;
+                padding: 10px;
+                color: white;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+
+            .product-price {
+                font-weight: bold;
+                padding: 2px;
+            }
+            
+        }
+    }
+}
+
+.same-product-title{
+    text-align: center;
+}
+
+.same-product-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+
+    .product {
+        margin: 15px;
+        width: 200px;
+        height: 300px;
+
+        .product-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
+
+            .product-btn {
+                background-color: #198755;
+                padding: 10px;
+                color: white;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+
+            .product-price {
+                font-weight: bold;
+                padding: 2px;
+            }
+            
+        }
+    }
+}
+
 // SORT PRODUCT
 .hide{
     display: none;
@@ -323,6 +413,37 @@ body{
     }
 }
 
+// GROWER
+
+.grower-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: flex-start;
+    margin: auto;
+    margin-top: 20px;
+
+    .grower {
+        margin: 15px;
+        width: 200px;
+        height: 300px;
+
+        .grower-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
+
+            .grower-btn {
+                background-color: #198755;
+                padding: 10px;
+                color: white;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+        }
+    }
+}
 
 // FOOTER 
 
