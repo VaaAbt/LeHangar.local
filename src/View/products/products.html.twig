@@ -13,7 +13,7 @@
             {% for product in products %}
                 <div class="product">
                     <form method="post" action="/products/addToCart/{{ product.id }}" id="{{ product.id }}">
-                    <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
+                    <img src="{{ product.image }}" class="product-img" alt="produit">
                     <div class="product-card">
                         <p class="product-title">{{ product.name }}</p>
                         <p class="product-description">{{ product.description }}</p>
