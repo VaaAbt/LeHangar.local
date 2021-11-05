@@ -65,7 +65,7 @@ class ProductController extends AbstractController
         
         Cart::addMultipleProductQuantity($args['id'],$data['quantity']);
 
-        //$url = '/detailedProduct/' . $args['id'];
+        FlashMessages::set('added', 'Le produit a bien été ajouté à votre panier.');
 
         return $response->withHeader('Location', '/detailedProduct/' . $args['id'])->withStatus(200);
     }
