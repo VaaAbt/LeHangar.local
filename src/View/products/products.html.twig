@@ -7,10 +7,10 @@
     </div>
 
     <div class="product-container">
-            {% for product in products %}
-                <div class="product">
-                    <form method="post" action="/products/addToCart/{{ product.id }}" id="{{ product.id }}">
-                    <img src="https://via.placeholder.com/200/088e8f/ffffff" class="product-img" alt="produit">
+        {% for product in products %}
+            <div class="product">
+                <form method="post" action="/products/addToCart/{{ product.id }}" id="{{ product.id }}">
+                    <img src="{{ product.image }}" class="product-img" alt="produit" width="200px" height="200px">
                     <div class="product-card">
                         <p class="product-title"><a href="/detailedProduct/{{ product.id }}">{{ product.name }}</a></p>
                         <p class="product-grower"><a href="/detailedGrower/{{ product.id_grower }}">Producteur</a></p>
@@ -21,9 +21,9 @@
                         <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
                         <input type="submit" value="Ajouter au panier" class="product-btn">
                     </div>
-                    </form>
-                </div>
-            {% endfor %}
+                </form>
+            </div>
+        {% endfor %}
     </div>
 
     <script src="/js/products.js" type="application/javascript" async></script>

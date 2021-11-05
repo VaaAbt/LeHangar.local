@@ -1,7 +1,6 @@
 <?php
 
 use App\Model\Utils\FlashMessages;
-use App\Utils\Auth;
 use DI\Container;
 use Slim\App;
 use Slim\Views\Twig;
