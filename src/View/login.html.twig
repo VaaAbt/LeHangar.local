@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <div class="container login_page" style="max-width: 600px;">
+        <h1 class="mb-4">Log in</h1>
+
+        {% if has_flash('credentials') %}
+            <div class="alert alert-danger">
+                {{ retrieve_flash('credentials') }}
+            </div>
+        {% endif %}
+        {% if has_flash('auth') %}
+            <div class="alert alert-danger">
+                {{ retrieve_flash('auth') }}
+            </div>
+        {% endif %}
+
+        <form method="post" class="login_form">
+            <div class="login_type">
+                <div class="radio_grower">
+                    <input type="radio" id="grower" name="type" value="grower" checked>
+                    <label for="grower">Grower</label>
+                </div>
+                <div class="radio_manager">
+                    <input type="radio" id="manager" name="type" value="manager">
+                    <label for="manager">Manager</label>
+                </div>
+            </div>
+            <div class="login_email">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+            </div>
+            <div class="login_password">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password" required>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Log in">
+        </form>
+        <br>
+        <!--<button type="submit" class="btn btn-secondary" onclick="window.location.href = '/signup'">No account? Signup!-->
+        </button>
+    </div>
+{% endblock %}
