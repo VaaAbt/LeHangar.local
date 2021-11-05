@@ -40,16 +40,17 @@ class ProductController extends AbstractController
 
     public function addProductToCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
+        $data = $request->getParsedBody();
         $product = Product::getProductById($args['id'])->id;
         if(isset($_SESSION['cart']) == NULL){
             $arr = array();
-            array_push($arr, [$product, 1]);
+            array_push($arr, [$product, $data['quantity']]);
             $_SESSION['cart'] = $arr;
         }else{
             if(Cart::checkIfInCart($product)){
                 Cart::addProductQuantity($product);
             }else{
-                array_push($_SESSION['cart'], [$product, 1]);
+                array_push($_SESSION['cart'], [$product, $data['quantity']]);
             }
         }
 
