@@ -14,10 +14,10 @@
                         <p class="product-description">{{ product.description }}</p>
                         <p class="product-price">{{ product.unit_price }} €</p>
                         <form method="post" action="/detailedProduct/addToCart/{{ product.id }}" id="{{ product.id }}">
-                            <input class="btn-add-quantity" id="{{ product.id }}" type="button" onclick="incrementValue('{{ product.id }}')" value="+" />
+                        <input class="btn-add-quantity" id="button-add" type="button" onclick="incrementValue('{{ product.id }}')" value="+" />
                         <input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
                         <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
-                            <input type="submit" value="Add to cart" class="btn">
+                        <input type="submit" value="Add to cart" class="btn">
                         </form>
                     </div>
                 </div>
@@ -41,5 +41,5 @@
                 </div>
         {% endfor %}
     </main>
-    <script src="/js/detailedProduct.js" type="application/javascript" async></script>
+    <script src="/js/products.js" type="application/javascript" async></script>
 {% endblock %}
