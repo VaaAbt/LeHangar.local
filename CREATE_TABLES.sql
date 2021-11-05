@@ -91,7 +91,7 @@ INSERT INTO category VALUES (7, 'aromates', 'aromath');
 
 /**INSERT PRODUCT**/
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Carottes (1kg)', 'Carottes fraiches de l\'est, cultivés sur des terres non poluées par des pesticides.', 0.89, 1, 1);
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Salade (la pièce)', 'Salade verte, arrosé à l\'eau de pluie et cultivée dans le sable', 0.99, 1, 2);
+INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Salade (la pièce)', 'Salade verte, arrosé à l\'eau de pluie et cultivée dans le sable.', 0.99, 1, 2);
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Haricots beurre (220g)', 'Haricots très bon pour les petits enfants.', 1.05, 1, 3);
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Aubergine (la pièce)', 'Aubergine violette, cultivé sur les flants de montagnes de l\'est.', 1.19, 1, 4);
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Tomates (1kg)', 'Tomates cultivées en serre.', 1.49, 1, 8);

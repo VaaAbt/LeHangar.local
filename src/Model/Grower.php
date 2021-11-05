@@ -26,4 +26,10 @@ class Grower extends Model
     {
         return $this->hasMany(Product::class, 'id_grower', 'id');
     }
+
+    public static function getAll()
+    {
+        return Grower::all();
+    }
+
 }

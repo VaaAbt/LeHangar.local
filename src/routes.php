@@ -1,6 +1,7 @@
 <?php
 /** @var App $app */
 
+use App\Controller\GrowerController;
 use App\Controller\HomeController;
 use App\Controller\ProductController;
 use App\Controller\CartController;
@@ -25,3 +26,5 @@ $app->get('/products/addToCart/{id}/removeOne', [ProductController::class, 'remo
 
 $app->get('/cart', [CartController::class, 'getCartView']);
 $app->post('/cart', [CartController::class, 'orderCart']);
+
+$app->get('/growers', [GrowerController::class, 'getAllGrowers']);

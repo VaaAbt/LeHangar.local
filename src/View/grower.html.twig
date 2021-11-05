@@ -1,0 +1,33 @@
+{% extends './base.html.twig' %}
+{% block content %}
+    <div class="page-title">
+        <h1>Liste des producteurs</h1>
+    </div>
+
+    <div class="sort_container">
+        <div class="search_container">
+            <h4 class="search_title">Rechercher</h4>
+
+            <div class="search_bare">
+                <img class="search_icon" src="/ressources/search_icon.png" alt="search">
+                <input class="search_input" type="text">
+            </div>
+        </div>
+    </div>
+
+    <div class="grower-container">
+        {% for grower in grower %}
+            <div class="grower">
+                    <img src="https://via.placeholder.com/200" class="grower-img" alt="grower">
+                    <div class="grower-card">
+                        <h5 class="grower-name">{{ grower.name }}</h5>
+                        <p class="grower-location">{{ grower.location }}</p>
+                        <p class="grower-email">{{ grower.email }}</p>
+                        <input type="submit" value="Visiter le profil" class="btn">
+                    </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script src="/js/products.js" type="application/javascript" async></script>
+{% endblock %}
