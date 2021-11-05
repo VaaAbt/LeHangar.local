@@ -33,9 +33,28 @@
   </div>
   </div>
     <div class="div2"> 
+            <form action="" method="post">
+
+            <div class="form-group">
+               <label for="customer_name">Name</label>
+               <input type="text" id="customer_name" name="customer_name">
+            </div>
+            <div class="form-group">
+               <label for="customer_email">email</label>
+               <input type="text" id="customer_email" name="customer_email">
+            </div>
+            <div class="form-group">
+               <label for="customer_phone">phone</label>
+               <input type="text" id="customer_phone" name="customer_phone">
+            </div>
+
+            <input type="submit" value="Passer la commande" class="btn">
+        </form>
+    </div>
+    <div class="div3"> 
+        Somme total : {{ total }}
 
     </div>
-    <div class="div3"> </div>
     <div class="div4"> </div>
 </div>
 

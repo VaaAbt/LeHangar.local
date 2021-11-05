@@ -13,8 +13,10 @@ class ProductController extends AbstractController
     public function getAllProducts(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         $products = Product::getAll();
+        $categories = Category::getAll();
         return $this->render($response, 'products.html.twig', [
-            'products' => $products
+            'products' => $products,
+            'category' => $categories
         ]);
     }
 
@@ -62,6 +64,18 @@ class ProductController extends AbstractController
         //$url = '/detailedProduct/' . $args['id'];
 
         return $response->withHeader('Location', '/detailedProduct/' . $args['id'])->withStatus(200);
+    }
+
+    public function getProductsByCategory(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $products = Product::where('id_category', '=', $args['id'])->get();
+        //$products = $cat->products();
+        $categories = Category::getAll();
+        return $this->render($response, 'products.html.twig', [
+            'products' => $products,
+            'category' => $categories,
+            'category_active' => $args['id']
+        ]);
     }
 
 

@@ -17,6 +17,7 @@ $app->get('/', [HomeController::class, 'index']);
 
 $app->get('/products', [ProductController::class, 'getAllProducts']);
 $app->post('/products/addToCart/{id}', [ProductController::class, 'addProductToCart']);
+$app->get('/products/category/{id}', [ProductController::class, 'getProductsByCategory']);
 
 $app->get('/products/addToCart/{id}/addOne', [ProductController::class, 'addProductQuantityToCart']);
 
@@ -26,3 +27,4 @@ $app->get('/cart', [CartController::class, 'getCartView']);
 
 $app->get('/detailedProduct/{id}', [ProductController::class, 'getProductById']);
 $app->post('/detailedProduct/addToCart/{id}', [ProductController::class, 'addDetailedProductToCart']);
+$app->post('/cart', [CartController::class, 'orderCart']);
