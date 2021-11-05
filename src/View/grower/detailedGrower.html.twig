@@ -24,11 +24,14 @@
                     <div class="product-card">
                         <h5 class="product-title"><a href="/detailedProduct/{{ product.id }}">{{ product.name }}</a></h5>
                         <p class="product-description">{{ product.description }}</p>
+                        <input class="btn-add-quantity" type="button" onclick="incrementValue()" value="+" />
+                        <input type="text" id="number" name="quantity" value="1"size="1"/>
+                        <input class="btn-remove-quantity" type="button" onclick="decrementValue()" value="-" />
                         <input type="submit" value="Add to cart" class="btn">
                     </div>
                     </form>
                 </div>
         {% endfor %}
     </main>
-
+    <script src="/js/products.js" type="application/javascript" async></script>
 {% endblock %}
