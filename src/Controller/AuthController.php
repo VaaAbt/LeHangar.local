@@ -12,7 +12,7 @@ class AuthController extends AbstractController
 
     public function loginView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        return $this->render($response, 'login.html.twig');
+        return $this->render($response, 'auth/login.html.twig');
     }
 
     public function login(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface

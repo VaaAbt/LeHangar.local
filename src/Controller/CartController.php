@@ -20,7 +20,7 @@ class CartController extends AbstractController
                 array_push($products, [Product::getProductById($_SESSION['cart'][$i]), $_SESSION['cart'][$i][1]]);
             }
         }
-        return $this->render($response, 'cart.html.twig', [
+        return $this->render($response, 'cart/cart.html.twig', [
             'products' => $products,
             'total' => Cart::getSumOfCart()
         ]);
