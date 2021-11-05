@@ -28,4 +28,10 @@ class GrowerController extends AbstractController
         ]);
     }
 
+
+    public function productsView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        return $this->render($response, 'account/grower.html.twig');
+    }
+
 }

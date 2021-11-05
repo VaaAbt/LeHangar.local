@@ -43,3 +43,9 @@ $app->get('/detailedGrower/{id}', [GrowerController::class, 'getGrowerById']);
 
 $app->get('/about', [AboutController::class, 'about']);
 
+
+//Manager and Grower view
+$app->get('/grower/myPage/{id}', [GrowerController::class, 'productsView']);
+//$app->get('/manager/myPage', [ManagerController::class, 'managerView']);
+
+
