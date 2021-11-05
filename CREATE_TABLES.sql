@@ -90,7 +90,7 @@ INSERT INTO category VALUES (7, 'aromates', 'aromath');
 
 
 /**INSERT PRODUCT**/
-INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Carottes (1kg)', 'Carottes fraiches de l\'est, cultivés sur des terres non poluées par des pesticides.', 0.89, 1, 1);
+INSERT INTO product (name, description, unit_price,  id_category, id_grower) VALUES ('Carottes (1kg)', 'Carottes fraiches de l\'est, cultivés sur des terres non poluées par des pesticides.', 0.89, 1, 1);
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Salade (la pièce)', 'Salade verte, arrosé à l\'eau de pluie et cultivée dans le sable.', 0.99, 1, 2);
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Haricots beurre (220g)', 'Haricots très bon pour les petits enfants.', 1.05, 1, 3);
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Aubergine (la pièce)', 'Aubergine violette, cultivé sur les flants de montagnes de l\'est.', 1.19, 1, 4);
@@ -130,5 +130,8 @@ INSERT INTO product (name, description, unit_price, id_category, id_grower) VALU
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Origan (100g)', 'Origan frais.', 2.70, 7, 8);
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Herbes de Provence (100g)', 'De Provence.', 1.07, 7, 8);
 INSERT INTO product (name, description, unit_price, id_category, id_grower) VALUES ('Assortiment d\'herbes aromatiques (100g)', 'Thym, romarin, persil, origan, herbes de Provence.', 2.49, 7, 9);
+
+UPDATE product SET image = LOAD_FILE('C:/Users/Pierre-Alexandre/Documents/GitHub/LeHangar.local/public/ressources/carottes.png') WHERE id = 1;
+
 
 COMMIT;
