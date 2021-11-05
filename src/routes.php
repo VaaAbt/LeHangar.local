@@ -27,7 +27,7 @@ $app->get('/products/addToCart/{id}/removeOne', [ProductController::class, 'remo
 $app->get('/cart', [CartController::class, 'getCartView']);
 
 $app->get('/detailedProduct/{id}', [ProductController::class, 'getProductById']);
-$app->post('/detailedProduct/addToCart/{id}', [ProductController::class, 'addDetailedProductToCart']);
+$app->post('/detailedProduct/addToCart/{id}/{amount}', [ProductController::class, 'addDetailedProductToCart']);
 $app->post('/cart', [CartController::class, 'orderCart']);
 
 $app->get('/growers', [GrowerController::class, 'getAllGrowers']);
