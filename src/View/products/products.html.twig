@@ -1,12 +1,6 @@
 {% extends './base.html.twig' %}
 {% block content %}
-
-    {% if has_flash('added') %}
-        <div class="alert alert-success">
-            {{ retrieve_flash('added') }}
-        </div>
-    {% endif %}
-
+    {% include 'partials/flash.html.twig' %}
     <div class="sort-container">
         {% include 'products/search_bar.html.twig' %}
         {% include 'products/filter.html.twig' %}

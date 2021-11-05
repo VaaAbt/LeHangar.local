@@ -1,0 +1,10 @@
+{% if has_flash('added') %}
+  <div class="alert alert-success">
+    {{ retrieve_flash('added') }}
+  </div>
+{% endif %}
+{% if has_flash('error') %}
+  <div class="alert alert-danger">
+    {{ retrieve_flash('error') }}
+  </div>
+{% endif %}
