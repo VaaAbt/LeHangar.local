@@ -39,22 +39,11 @@ class GrowerController extends AbstractController
             $id_prodsArray[] = ($prod->id);
         }
 
-        $listProds = []; $listIdOrder = [];
+        $listProds = [];
         $tmplistProdsOrder = listProducts::all();
         foreach($tmplistProdsOrder as $list){
             if(in_array($list->getAttribute('id_product'), $id_prodsArray)){
-                $listProds[$list->getAttribute('id_order')][] = $list->getAttribute('id_product');
-                if(!in_array($list->getAttribute('id_order'), $listIdOrder)){
-                    $listIdOrder[] = $list->getAttribute('id_order');
-                }
-            }
-        }
-
-        $tmpOrders = Order::all();
-        $orders = [];
-        foreach($tmpOrders as $ord){
-            if(in_array($ord->getAttribute('id'), $listIdOrder)){
-                $order[] = $ord;
+                $listProds[$list->getAttribute('id_order')][] = [Product::query()->where('id', $list->getAttribute('id_product'))->first(), $list->getAttribute('quantity')];
             }
         }
 
