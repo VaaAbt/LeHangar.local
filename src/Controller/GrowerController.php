@@ -58,11 +58,37 @@ class GrowerController extends AbstractController
             }
         }
 
+        $informations = Grower::getGrowerById($args['id']);
+
         return $this->render($response, 'account/grower.html.twig', [
             'products' => $products,
             'listProducts' => $listProds,
-            'orders' => $orders
+            'orders' => $orders,
+            'grower_infos' => $informations
         ]);
     }
+
+    public function editProductsView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $product = Product::getProductById($args['id_product']);
+        return $this->render($response, 'account/productEdition.html.twig', [
+            'product' => $product
+        ]);
+    }
+
+    public function saveEditOfProduct(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $product = Product::getProductById($args['id_product']);
+        $data = $request->getParsedBody();
+
+        $product->name = $data['name'];
+        $product->description = $data['description'];
+        $product->unit_price = $data['price'];
+        $product->save();
+
+        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+        
+    }
+
 
 }

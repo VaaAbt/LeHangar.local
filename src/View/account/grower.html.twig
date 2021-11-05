@@ -2,6 +2,10 @@
 {% block content %}
     <div class="container grower_page" style="max-width: 600px;">
         <h1 class="mb-4">Page Producteur</h1>
+        <h2 class="">{{grower_infos.name}}</h2>
+        <p class="">{{grower_infos.location}}</p>
+        <p class="">{{grower_infos.email}}</p>
+        <a href="#" class="btn btn-success">modifier mon profil</a>
 
         {% if has_flash('credentials') %}
             <div class="alert alert-danger">
@@ -26,8 +30,8 @@
                                 <p class="product-title">{{ product.name }}</p>
                                 <p class="product-description">{{ product.description }}</p>
                                 <p class="product-price">{{ product.unit_price }} €</p>
-                                <button class="product-btn">Editer</button>
-                                <img src="https://via.placeholder.com/200/088e8f/ffffff" class="product-img" alt="produit">
+                                <a href="/grower/myPage/{{grower_infos.id}}/product/{{product.id}}/edit" class="product-btn">Editer</a>
+                                <img src="{{product.image}}" class="product-img" alt="produit">
                             </div>
                         </div>
 
