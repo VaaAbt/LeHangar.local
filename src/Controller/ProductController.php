@@ -28,7 +28,7 @@ class ProductController extends AbstractController
         $grower = Grower::getGrowerById($product->id_grower);
         $category = Category::getCategoryById($product->id_category);
 
-        $products = Product::getRandomProductSameCategory(1,4);
+        $products = Product::getRandomProductSameCategory(1,3,$product->id);
 
         return $this->render($response, 'products/detailedProduct.html.twig', [
             'product' => $product,
