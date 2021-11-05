@@ -31,3 +31,5 @@ $app->post('/detailedProduct/addToCart/{id}', [ProductController::class, 'addDet
 $app->post('/cart', [CartController::class, 'orderCart']);
 
 $app->get('/growers', [GrowerController::class, 'getAllGrowers']);
+
+$app->get('/detailedGrower/{id}', [GrowerController::class, 'getGrowerById']);

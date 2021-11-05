@@ -12,7 +12,8 @@
                     <form method="post" action="/products/addToCart/{{ product.id }}" id="{{ product.id }}">
                     <img src="https://via.placeholder.com/200/088e8f/ffffff" class="product-img" alt="produit">
                     <div class="product-card">
-                        <p class="product-title">{{ product.name }}</p>
+                        <p class="product-title"><a href="/detailedProduct/{{ product.id }}">{{ product.name }}</a></p>
+                        <p class="product-grower"><a href="/detailedGrower/{{ product.id_grower }}">Producteur</a></p>
                         <p class="product-description">{{ product.description }}</p>
                         <p class="product-price">{{ product.unit_price }} €</p>
                         <input type="submit" value="Ajouter au panier" class="product-btn">
