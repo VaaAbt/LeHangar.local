@@ -16,9 +16,9 @@
                         <p class="product-grower"><a href="/detailedGrower/{{ product.id_grower }}">Producteur</a></p>
                         <p class="product-description">{{ product.description }}</p>
                         <p class="product-price">{{ product.unit_price }} €</p>
-                        <input class="btn-add-quantity" type="button" onclick="incrementValue()" value="+" />
-                        <input type="text" id="number" name="quantity" value="1"size="1"/>
-                        <input class="btn-remove-quantity" type="button" onclick="decrementValue()" value="-" />
+                        <input class="btn-add-quantity" id="{{ product.id }}" type="button" onclick="incrementValue('{{ product.id }}')" value="+" />
+                        <input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
+                        <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
                         <input type="submit" value="Ajouter au panier" class="product-btn">
                     </div>
                     </form>

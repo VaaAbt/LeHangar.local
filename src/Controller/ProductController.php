@@ -95,4 +95,10 @@ class ProductController extends AbstractController
         Cart::removeProductQuantity($args['id']);
         return $response->withHeader('Location', '/cart')->withStatus(200);
     }
+
+    public function removeProductFromCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        Cart::removeProduct($args['id']);
+        return $response->withHeader('Location', '/cart')->withStatus(200);
+    }
 }
