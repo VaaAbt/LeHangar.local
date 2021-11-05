@@ -20,10 +20,12 @@
             <div class="grower">
                     <img src="https://via.placeholder.com/200" class="grower-img" alt="grower">
                     <div class="grower-card">
-                        <h5 class="grower-name">{{ grower.name }}</h5>
+                        <h5 class="grower-name"><a href="/detailedGrower/{{ grower.id }}">{{ grower.name }}</a></h5>
                         <p class="grower-location">{{ grower.location }}</p>
                         <p class="grower-email">{{ grower.email }}</p>
-                        <input type="submit" value="Visiter le profil" class="btn">
+                        <form method="get" action="detailedGrower/{{ grower.id }}" id="{{ grower.id }}">
+                            <input type="submit" value="Visiter le profil" class="btn">
+                        </form>
                     </div>
             </div>
         {% endfor %}
