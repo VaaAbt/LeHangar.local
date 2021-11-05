@@ -4,15 +4,8 @@
         <h1>Liste des producteurs</h1>
     </div>
 
-    <div class="sort_container">
-        <div class="search_container">
-            <h4 class="search_title">Rechercher</h4>
-
-            <div class="search_bare">
-                <img class="search_icon" src="/ressources/search_icon.png" alt="search">
-                <input class="search_input" type="text">
-            </div>
-        </div>
+    <div class="sort-container">
+        {% include 'grower/search_bar.html.twig' %}
     </div>
 
     <div class="grower-container">
