@@ -31,7 +31,7 @@ class Auth
      * @param string $password - Password of the user
      * @return User|null - The user if credentials works or null if not
      */
-    public static function attempt(string $email, string $password, string $type): array
+    public static function attempt(string $email, string $password, string $type)
     {
         self::$_account = null;
 
@@ -56,7 +56,7 @@ class Auth
             self::$_account = $user;
         }
 
-        return [self::$_account, $user->getAttribute('id')];
+        return self::$_account;
     }
 
     /**
