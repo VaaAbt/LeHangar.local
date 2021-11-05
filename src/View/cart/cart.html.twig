@@ -1,0 +1,10 @@
+{% extends './base.html.twig' %}
+{% block content %}
+
+<div class="cart-summary">
+    {% include 'cart/orders.html.twig' %}
+    {% include 'cart/form.html.twig' %}
+    {% include 'cart/resume.html.twig' %}
+</div>
+
+{% endblock %}

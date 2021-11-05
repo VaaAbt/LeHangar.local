@@ -42,6 +42,26 @@ class Cart
         return true;
     }
 
+    public function addMultipleProductQuantity($product_id, $quantity){
+
+        $arr = array();
+        
+        if(Cart::checkIfInCart($product_id)){
+            foreach ($_SESSION['cart'] as $product) {
+
+                if($product[0] == $product_id){
+                    $product[1] += $quantity;
+                }
+                
+                array_push($arr, $product);
+            }
+            $_SESSION['cart'] = $arr;
+        }else{
+            array_push($_SESSION['cart'], [$product_id, $quantity]);
+        }
+        return true;
+    }
+
     public function removeProductQuantity($product_id){
         $push = true;
         $arr = array();

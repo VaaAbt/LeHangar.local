@@ -1,11 +1,11 @@
-const search = document.getElementsByClassName('search-input')[0];
-const listProds = Array.from(document.getElementsByClassName('product'));
+const search = document.getElementsByClassName('search_input')[0];
+const listProds = Array.from(document.getElementsByClassName('grower'));
 
 search.addEventListener('input', () => {
     if(search.value !== ""){
         let text = search.value.toLowerCase();
         listProds.forEach(elem => {
-           let name = elem.getElementsByClassName('product-title')[0].innerHTML;
+           let name = elem.getElementsByClassName('grower-name')[0].innerHTML;
            name = name.toLowerCase();
 
            if(!name.includes(text)){

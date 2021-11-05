@@ -15,7 +15,7 @@ class ProductController extends AbstractController
     {
         $products = Product::getAll();
         $categories = Category::getAll();
-        return $this->render($response, 'products.html.twig', [
+        return $this->render($response, 'products/products.html.twig', [
             'products' => $products,
             'category' => $categories
         ]);
@@ -29,7 +29,7 @@ class ProductController extends AbstractController
 
         $products = Product::getRandomProductSameCategory(1,4);
 
-        return $this->render($response, 'detailedProduct.html.twig', [
+        return $this->render($response, 'products/detailedProduct.html.twig', [
             'product' => $product,
             'grower' => $grower,
             'category' => $category,
@@ -77,7 +77,7 @@ class ProductController extends AbstractController
         $products = Product::where('id_category', '=', $args['id'])->get();
         //$products = $cat->products();
         $categories = Category::getAll();
-        return $this->render($response, 'products.html.twig', [
+        return $this->render($response, 'products/products.html.twig', [
             'products' => $products,
             'category' => $categories,
             'category_active' => $args['id']

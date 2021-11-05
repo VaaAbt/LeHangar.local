@@ -35,6 +35,11 @@ class Product extends Model
         return Product::where('id', '=', $id)->first();
     }
 
+    public static function getProductsById_Grower($grower){
+        $products = Product::where("id_grower", "=", $grower)->orderBy('id', 'desc')->get();
+        return $products;
+    }
+
     public static function getAll()
     {
         return Product::all();
