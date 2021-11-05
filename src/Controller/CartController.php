@@ -28,7 +28,7 @@ class CartController extends AbstractController
     public function orderCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {   
         $data = $request->getParsedBody();
-        $customer = Order::create([
+        $order = Order::create([
             'customer_name' => $data['customer_name'],
             'customer_email' => $data['customer_email'],
             'customer_phone' => $data['customer_phone'],
@@ -38,12 +38,14 @@ class CartController extends AbstractController
 
         if(isset($_SESSION['cart'])){
             foreach ($_SESSION['cart'] as $product) {
-                $newOrder = listProducts::create([
-                    'id_product' => $product[0]->id,
-                    'id_order' => $customer->id,
+                $newCommand = listProducts::create([
+                    'id_product' => $product[0],
+                    'id_order' => $order->id,
                     'quantity' => $product[1] 
                 ]);
             }
         }
+
+        return $this->render($response, 'home.html.twig');
     }
 }
