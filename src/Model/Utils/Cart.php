@@ -18,4 +18,47 @@ class Cart
         return $total;
     }
 
+    public function checkIfInCart($product_id){
+        foreach ($_SESSION['cart'] as $product) {
+            if($product[0] == $product_id){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function addProductQuantity($product_id){
+
+        $arr = array();
+        foreach ($_SESSION['cart'] as $product) {
+
+            if($product[0] == $product_id){
+                $product[1] += 1;
+            }
+            
+            array_push($arr, $product);
+        }
+        $_SESSION['cart'] = $arr;
+        return true;
+    }
+
+    public function removeProductQuantity($product_id){
+        $push = true;
+        $arr = array();
+        foreach ($_SESSION['cart'] as $product) {
+            if($product[0] == $product_id && $product[1] > 1){
+                $product[1] -= 1;
+                $push = true;
+            }elseif($product[0] == $product_id && $product[1] == 1){
+                $push = false;
+            }else{
+                $push = true;
+            }
+            if($push){
+                array_push($arr, $product);
+            }
+        }
+        $_SESSION['cart'] = $arr;
+    }
+
 }

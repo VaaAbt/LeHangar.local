@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\Category;
 use App\Model\Product;
+use App\Model\Utils\Cart;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -21,12 +22,17 @@ class ProductController extends AbstractController
 
     public function addProductToCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
+        $product = Product::getProductById($args['id'])->id;
         if(isset($_SESSION['cart']) == NULL){
             $arr = array();
-            array_push($arr, [Product::getProductById($args['id'])->id, 1]);
+            array_push($arr, [$product, 1]);
             $_SESSION['cart'] = $arr;
         }else{
-            array_push($_SESSION['cart'], [Product::getProductById($args['id'])->id, 1]);
+            if(Cart::checkIfInCart($product)){
+                Cart::addProductQuantity($product);
+            }else{
+                array_push($_SESSION['cart'], [$product, 1]);
+            }
         }
 
         return $response->withHeader('Location', '/products')->withStatus(200);
@@ -49,39 +55,13 @@ class ProductController extends AbstractController
     public function addProductQuantityToCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
 
-        $arr = array();
-        foreach ($_SESSION['cart'] as $product) {
-
-            if($product[0] == $args['id']){
-                $product[1] += 1;
-            }
-            
-            array_push($arr, $product);
-        }
-        $_SESSION['cart'] = $arr;
-
+        Cart::addProductQuantity($args['id']);
         return $response->withHeader('Location', '/cart')->withStatus(200);
     }
 
     public function removeProductQuantityToCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        $push = true;
-        $arr = array();
-        foreach ($_SESSION['cart'] as $product) {
-            if($product[0] == $args['id'] && $product[1] > 1){
-                $product[1] -= 1;
-                $push = true;
-            }elseif($product[0] == $args['id'] && $product[1] == 1){
-                $push = false;
-            }else{
-                $push = true;
-            }
-            if($push){
-                array_push($arr, $product);
-            }
-        }
-        $_SESSION['cart'] = $arr;
-
+        Cart::removeProductQuantity($args['id']);
         return $response->withHeader('Location', '/cart')->withStatus(200);
     }
 }
