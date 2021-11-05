@@ -146,7 +146,6 @@ body {
 .product-container .product .product-title {
   font-weight: bold;
   font-size: 18px;
-  border-bottom: 1px solid rgba(141, 141, 141, 0.5);
 }
 .product-container .product .product-description {
   opacity: 0.8;
