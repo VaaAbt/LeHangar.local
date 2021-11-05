@@ -15,7 +15,7 @@ class ProductController extends AbstractController
     {
         $products = Product::getAll();
         $categories = Category::getAll();
-        return $this->render($response, 'products.html.twig', [
+        return $this->render($response, 'products/products.html.twig', [
             'products' => $products,
             'category' => $categories
         ]);
@@ -77,7 +77,7 @@ class ProductController extends AbstractController
         $products = Product::where('id_category', '=', $args['id'])->get();
         //$products = $cat->products();
         $categories = Category::getAll();
-        return $this->render($response, 'products.html.twig', [
+        return $this->render($response, 'products/products.html.twig', [
             'products' => $products,
             'category' => $categories,
             'category_active' => $args['id']
