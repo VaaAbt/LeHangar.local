@@ -5,32 +5,32 @@
     </div>
 
     <div class="detailed-grower-container">
-            <div class="grower">
-                    <img src="https://via.placeholder.com/200" class="grower-img" alt="grower">
-                    <div class="grower-card">
-                        <h5 class="grower-name">{{ grower.name }}</h5>
-                        <p class="grower-location">{{ grower.location }}</p>
-                        <p class="grower-email">{{ grower.email }}</p>
-                    </div>
+        <div class="grower">
+            <img src="https://via.placeholder.com/200" class="grower-img" alt="grower">
+            <div class="grower-card">
+                <h5 class="grower-name">{{ grower.name }}</h5>
+                <p class="grower-location">{{ grower.location }}</p>
+                <p class="grower-email">{{ grower.email }}</p>
             </div>
+        </div>
     </div>
 
     <h2 class="grower-product-title">Produits du producteur</h2>
     <main class="grower-product-container">
         {% for product in products %}
-                <div class="product">
-                    <form method="post" action="/detailedGrower/addToCart/{{ product.id }}" id="{{ product.id }}">
+            <div class="product">
+                <form method="post" action="/detailedGrower/addToCart/{{ product.id }}" id="{{ product.id }}">
                     <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
                     <div class="product-card">
                         <h5 class="product-title"><a href="/detailedProduct/{{ product.id }}">{{ product.name }}</a></h5>
                         <p class="product-description">{{ product.description }}</p>
-                        <input class="btn-add-quantity" id="{{ product.id }}" type="button" onclick="incrementValue('{{ product.id }}')" value="+" />
-                        <input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
-                        <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
+                        <input class="btn-add-quantity" id="{{ product.id }}" type="button" onclick="incrementValue('{{ product.id }}')" value="+"/>
+                        <label for="number{{ product.id }}"></label><input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
+                        <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-"/>
                         <input type="submit" value="Add to cart" class="btn">
                     </div>
-                    </form>
-                </div>
+                </form>
+            </div>
         {% endfor %}
     </main>
     <script src="/js/products.js" type="application/javascript" async></script>

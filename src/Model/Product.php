@@ -4,7 +4,6 @@ namespace App\Model;
 
 use App\Model\Utils\Auth;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Product extends Model
 {
@@ -22,17 +21,8 @@ class Product extends Model
      */
     public $timestamps = false;
 
-    public function category(): BelongsTo
+    public static function create($data): Product
     {
-        return $this->belongsTo(Category::class, 'id', 'id_category');
-    }
-
-    public function grower(): BelongsTo
-    {
-        return $this->belongsTo(Grower::class, 'id', 'id_grower');
-    }
-
-    public static function create($data) {
         $product = new Product();
 
         $product->setAttribute('name', $data['product_name']);
@@ -46,13 +36,14 @@ class Product extends Model
         return $product;
     }
 
-    public static function getProductById($id){
+    public static function getProductById($id)
+    {
         return Product::where('id', '=', $id)->first();
     }
 
-    public static function getProductsById_Grower($grower){
-        $products = Product::where("id_grower", "=", $grower)->orderBy('id', 'desc')->get();
-        return $products;
+    public static function getProductsById_Grower($grower)
+    {
+        return Product::where("id_grower", "=", $grower)->orderBy('id', 'desc')->get();
     }
 
     public static function getAll()
@@ -60,7 +51,7 @@ class Product extends Model
         return Product::all();
     }
 
-    public static function getRandomProduct($amount)
+    public static function getRandomProduct($amount): array
     {
         $lastProduct = Product::orderBy('id', 'desc')->first();
         $min = 1;
@@ -68,7 +59,7 @@ class Product extends Model
 
         $products = array();
 
-        for ($i=0; $i < $amount; $i++) { 
+        for ($i = 0; $i < $amount; $i++) {
             $product_id = rand($min, $max);
             $item = Product::where('id', '=', $product_id)->first();
             array_push($products, $item);
@@ -77,7 +68,7 @@ class Product extends Model
         return $products;
     }
 
-    public static function getRandomProductSameCategory($category,$amount,$pid)
+    public static function getRandomProductSameCategory($category, $amount, $pid): array
     {
         $lastProduct = Product::distinct()->where("id_category", "=", $category)->orderBy('id', 'desc')->first();
         $min = 1;
@@ -85,13 +76,13 @@ class Product extends Model
 
         $products = array();
         $used = array();
-        array_push($used,$pid);
+        array_push($used, $pid);
 
-        for ($i=0; $i < $amount; $i++) { 
-            do{
+        for ($i = 0; $i < $amount; $i++) {
+            do {
                 $product_id = rand($min, $max);
-            }while(in_array($product_id,$used));
-            array_push($used,$product_id);
+            } while (in_array($product_id, $used));
+            array_push($used, $product_id);
             $item = Product::distinct()->where('id', '=', $product_id)->first();
             array_push($products, $item);
         }

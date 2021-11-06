@@ -7,24 +7,24 @@
             <h3 class="grower_products-title">Mon produit</h3>
 
             <div class="grower_products-list">
+                <div class="product">
+
                     <div class="product">
-
-                        <div class="product">
-                            <div class="product-card">
-                                <form action="" method="post">
-                                <input name="name" class="product-title" value="{{ product.name }}">
-                                <input name="description" class="product-description" value="{{ product.description }}">
-                                <input name="price" class="product-price" value="{{ product.unit_price }}" >
-                                <input name="image" value="{{ product.image }}" >
-                                <img src="{{product.image}}" class="product-img" alt="produit">
+                        <div class="product-card">
+                            <form action="" method="post">
+                                <label><input name="name" class="product-title" value="{{ product.name }}"></label>
+                                <label><input name="description" class="product-description" value="{{ product.description }}"></label>
+                                <label><input name="price" class="product-price" value="{{ product.unit_price }}"></label>
+                                <label><input name="image" value="{{ product.image }}"></label>
+                                <img src="{{ product.image }}" class="product-img" alt="produit">
                                 <button>Valider mes modifications</button>
-                                </form>
-                            </div>
+                            </form>
                         </div>
-
-                        <a href="/grower/myPage/{{grower_id}}/product/{{product.id}}/delete">supprimer le produit</a>
-
                     </div>
+
+                    <a href="/grower/myPage/{{ grower_id }}/product/{{ product.id }}/delete">supprimer le produit</a>
+
+                </div>
             </div>
 
         </div>
