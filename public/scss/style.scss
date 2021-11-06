@@ -28,17 +28,18 @@ body {
   text-align: center;
 
   img {
-    width: 100%;
+    width: 78vw;
     // filter: blur(2px);
   }
 
   .text-centered {
+    white-space: nowrap;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(24, 78, 119);
-    font-size: 28px;
+    font-size: 3vw;
     font-weight: bold;
     padding: 20px;
     background-color: white;
