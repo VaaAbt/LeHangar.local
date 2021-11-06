@@ -1,26 +1,26 @@
 <div class="cart-orders">
-      <div class="cart-container">
-    {% for product in products %}
-      <div class="cart-product">
-          <img src="{{ product[0].image }}" class="cart-img" alt="produit" width="100px" height="100px"/>
-          <div class="product-card">
-            <h5 class="cart-title">
-              <a href="/detailedProduct/{{ product[0].id }}">{{ product[0].name }}</a>
-            </h5>
-            <p class="cart-description">
-              {{ product[0].description }}
-            </p>
-            <p class="cart-price">
-                {{ product[0].unit_price }} €
-            </p>
-            <div class="cart-quantity">
-                <a class="btn-add-quantity" href="/products/addToCart/{{product[0].id}}/addOne">+</a>
-                <span>{{ product[1] }}</span>
-                <a class="btn-remove-quantity" href="/products/addToCart/{{product[0].id}}/removeOne"> -</a>
-                <a class="btn-remove-quantity" href="/products/addToCart/{{product[0].id}}/removeAll"> supprimer</a>
+    <div class="cart-container">
+        {% for product in products %}
+            <div class="cart-product">
+                <img src="{{ product[0].image }}" class="cart-img" alt="produit" width="100px" height="100px"/>
+                <div class="product-card">
+                    <h5 class="cart-title">
+                        <a href="/detailedProduct/{{ product[0].id }}">{{ product[0].name }}</a>
+                    </h5>
+                    <p class="cart-description">
+                        {{ product[0].description }}
+                    </p>
+                    <p class="cart-price">
+                        {{ product[0].unit_price }} €
+                    </p>
+                    <div class="cart-quantity">
+                        <a class="btn-add-quantity" href="/products/addToCart/{{ product[0].id }}/addOne">+</a>
+                        <span>{{ product[1] }}</span>
+                        <a class="btn-remove-quantity" href="/products/addToCart/{{ product[0].id }}/removeOne"> -</a>
+                        <a class="btn-remove-quantity" href="/products/addToCart/{{ product[0].id }}/removeAll"> supprimer</a>
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
-    {% endfor %}
-  </div>
-  </div>
+        {% endfor %}
+    </div>
+</div>
