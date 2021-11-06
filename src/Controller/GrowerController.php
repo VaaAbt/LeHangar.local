@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\Grower;
 use App\Model\listProducts;
-use App\Model\Order;
+use App\Model\Utils\FlashMessages;
 use App\Model\Product;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -60,7 +60,8 @@ class GrowerController extends AbstractController
     {
         $product = Product::getProductById($args['id_product']);
         return $this->render($response, 'account/productEdition.html.twig', [
-            'product' => $product
+            'product' => $product,
+            'grower_id' => $args['id']
         ]);
     }
 
@@ -78,5 +79,45 @@ class GrowerController extends AbstractController
         
     }
 
+    public function getCreateNewProductPage(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        return $this->render($response, 'account/newProduct.html.twig');
+    }
 
+    public function createNewProduct(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $data = $request->getParsedBody();
+        Product::create($data);
+        FlashMessages::set('success', 'Le produit a bien été créé.');
+        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+    }
+
+    public function deleteProduct(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $product = Product::getProductById($args['id_product']);
+        $product->delete();
+        FlashMessages::set('success', 'Le produit a bien été supprimé.');
+        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+    }
+
+    public function getGrowerEditView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $grower = Grower::getGrowerById($args['id']);
+        return $this->render($response, 'account/editGrower.html.twig', [
+            'grower' => $grower
+        ]);
+    }
+
+    public function editGrowerInformations(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $grower = Grower::getGrowerById($args['id']);
+        $data = $request->getParsedBody();
+        $grower->name = $data['grower_name'];
+        $grower->location = $data['grower_adresse'];
+        $grower->email = $data['grower_email'];
+        $grower->save();
+        FlashMessages::set('success', 'Votre compte a bien été modifié!');
+        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+    }
+    
 }

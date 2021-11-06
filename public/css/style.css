@@ -176,6 +176,9 @@ body {
   color: #fff;
   background-color: #0b5ed7;
 }
+.product-container .product.hide {
+  display: none;
+}
 
 .detailed-product-container {
   display: flex;
@@ -344,10 +347,6 @@ body {
 .grower-product-container .product .product-card .product-price {
   font-weight: bold;
   padding: 2px;
-}
-
-.hide {
-  display: none;
 }
 
 .sort-container {
@@ -619,6 +618,9 @@ body {
 .grower-container .grower .grower-btn:hover {
   color: #fff;
   background-color: #0b5ed7;
+}
+.grower-container .grower.hide {
+  display: none;
 }
 
 .grower_page {
