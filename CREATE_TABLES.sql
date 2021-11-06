@@ -1,3 +1,5 @@
+SET NAMES utf8;
+
 CREATE TABLE IF NOT EXISTS hangarlocal.grower
 (
     id int(11) NOT NULL AUTO_INCREMENT,
