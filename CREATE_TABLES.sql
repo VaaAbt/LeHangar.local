@@ -82,6 +82,11 @@ INSERT INTO grower (name, location, email, password) VALUES ('La Ferme de Nouvel
 
 
 
+/**INSERT MANAGER**/
+INSERT INTO manager (name, email, password) VALUES ('LP Ciasie', 'lpciasie@lehangar.local', '$2y$10$9wvJcoVCKLKKFEUBjl7xQelSrLYw8L.pFKfQOYuq4ESYB.wtPsOi.');
+
+
+
 /**INSERT CATEGORY**/
 INSERT INTO category VALUES (1, 'legumes', 'legumineux');
 INSERT INTO category VALUES (2, 'fruits', 'fruiteux');
