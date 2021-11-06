@@ -4,39 +4,39 @@
         <h1 class="mb-4">Création de produit</h1>
         <a href="#" class="">retour</a>
 
-        <div class=""> 
+        <div class="">
             <form action="" method="post">
-               <div>
-                  <label for="product_name">Nom du produit</label>
-                  <input type="text" id="product_name" name="product_name">
-               </div>
-               <div class="form-group">
-                  <label for="product_description">description du produit</label>
-                  <input type="text" id="product_description" name="product_description">
-               </div>
-               <div class="form-group">
-                  <label for="product_price">Prix</label>
-                  <input type="number" id="product_price" name="product_price">
-               </div>
-               <div class="form-group">
-                  <label for="product_category">Catégorie</label>
-                    <select name="product_category" >
-                        <option value="1">Légumes</option>
-                        <option value="2">Fruits</option>
-                        <option value="3">Feculents</option>
-                        <option value="4">Céréale</option>
-                        <option value="5">Produit laitier</option>
-                        <option value="6">Viandes</option>
-                        <option value="7">Aromates</option>
-                    </select>
-               </div>
+                <div>
+                    <label for="product_name">Nom du produit</label>
+                    <input type="text" id="product_name" name="product_name">
+                </div>
                 <div class="form-group">
-                  <label for="product_image">Image (url)</label>
-                  <input type="text" id="product_image" name="product_image">
-               </div>
+                    <label for="product_description">description du produit</label>
+                    <input type="text" id="product_description" name="product_description">
+                </div>
+                <div class="form-group">
+                    <label for="product_price">Prix</label>
+                    <input type="number" id="product_price" name="product_price">
+                </div>
+                <div class="form-group">
+                    <label for="product_category">Catégorie</label>
+                    <label><select name="product_category">
+                            <option value="1">Légumes</option>
+                            <option value="2">Fruits</option>
+                            <option value="3">Feculents</option>
+                            <option value="4">Céréale</option>
+                            <option value="5">Produit laitier</option>
+                            <option value="6">Viandes</option>
+                            <option value="7">Aromates</option>
+                        </select></label>
+                </div>
+                <div class="form-group">
+                    <label for="product_image">Image (url)</label>
+                    <input type="text" id="product_image" name="product_image">
+                </div>
 
-               <input type="submit" value="Créer le produit" class="btn">
-        </form>
-    </div>
+                <input type="submit" value="Créer le produit" class="btn">
+            </form>
+        </div>
     </div>
 {% endblock %}

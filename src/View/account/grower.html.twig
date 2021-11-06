@@ -2,12 +2,12 @@
 {% block content %}
     <div class="container grower_page">
         <h1 class="mb-4">Page Producteur</h1>
-        <h2 class="">{{grower_infos.name}}</h2>
-        <p class="">{{grower_infos.location}}</p>
-        <p class="">{{grower_infos.email}}</p>
-        <a href="/grower/myPage/{{grower_infos.id}}/edit" class="btn btn-success">modifier mon profil</a>
+        <h2 class="">{{ grower_infos.name }}</h2>
+        <p class="">{{ grower_infos.location }}</p>
+        <p class="">{{ grower_infos.email }}</p>
+        <a href="/grower/myPage/{{ grower_infos.id }}/edit" class="btn btn-success">modifier mon profil</a>
 
-    {% include 'partials/flash.html.twig' %}
+        {% include 'partials/flash.html.twig' %}
 
         <div class="grower_products">
             <h3 class="grower_products-title">Mes produits</h3>
@@ -15,18 +15,18 @@
             <div class="grower_products-list">
                 {% for product in products %}
                     <div class="product">
-                            <div class="product-card">
-                                <p class="product-title">{{ product.name }}</p>
-                                <p class="product-description">{{ product.description }}</p>
-                                <p class="product-price">{{ product.unit_price }} €</p>
-                                <img src="{{product.image}}" class="product-img" alt="produit" width="200px" height="200px">
-                                <a href="/grower/myPage/{{grower_infos.id}}/product/{{product.id}}/edit" class="product-btn">Editer</a>
-                            </div>
+                        <div class="product-card">
+                            <p class="product-title">{{ product.name }}</p>
+                            <p class="product-description">{{ product.description }}</p>
+                            <p class="product-price">{{ product.unit_price }} €</p>
+                            <img src="{{ product.image }}" class="product-img" alt="produit" width="200px" height="200px">
+                            <a href="/grower/myPage/{{ grower_infos.id }}/product/{{ product.id }}/edit" class="product-btn">Editer</a>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
 
-            <a href="/grower/myPage/{{grower_infos.id}}/product/new">Ajouter un nouveau produit</a>
+            <a href="/grower/myPage/{{ grower_infos.id }}/product/new">Ajouter un nouveau produit</a>
 
         </div>
 
@@ -38,21 +38,21 @@
                     <div class="order">
                         <div class="order_products-list">
                             {% for prod in idproductsQt %}
-                            {% for key, item in prod %}
-                                {% if key == 0 %}
-                                    <div class="order-products">
+                                {% for key, item in prod %}
+                                    {% if key == 0 %}
+                                        <div class="order-products">
                                         <img src="https://via.placeholder.com/200/088e8f/ffffff" class="product-img" alt="produit">
                                         <div class="product_details">
                                             <p class="product_name">{{ item.name }}</p>
                                             <p class="product_description">{{ item.description }}</p>
                                         </div>
-                                {% elseif key == 1 %}
+                                    {% elseif key == 1 %}
                                         <div class="products-quantity">
                                             <p class="product_quantity">{{ item }}</p>
                                         </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
                             {% endfor %}
                         </div>
                         <div class="order_buttons">
