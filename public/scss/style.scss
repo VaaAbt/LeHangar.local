@@ -145,7 +145,6 @@ body {
     content: "";
     flex: auto;
   }
-
   .product {
     background-color: #ffffff;
     display: inline-block;
@@ -204,6 +203,9 @@ body {
         background-color: #0b5ed7;
       }
     }
+  }
+  .product.hide {
+    display: none;
   }
 }
 
@@ -404,10 +406,6 @@ body {
 }
 
 // SORT PRODUCT
-.hide {
-  display: none;
-}
-
 .sort-container {
   display: flex;
   flex-direction: row;
@@ -728,6 +726,9 @@ body {
         background-color: #0b5ed7;
       }
     }
+  }
+  .grower.hide {
+    display: none;
   }
 }
 
