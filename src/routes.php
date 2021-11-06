@@ -58,7 +58,6 @@ $app->post('/grower/myPage/{id}/product/new', [GrowerController::class, 'createN
 $app->get('/grower/myPage/{id}/product/{id_product}/delete', [GrowerController::class, 'deleteProduct']);
 
 
-
 $app->get('/manager/dashboard', [ManagerController::class, 'dashboardView']);
 $app->get('/manager/orders', [ManagerController::class, 'ordersView']);
 
