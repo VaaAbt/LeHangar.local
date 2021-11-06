@@ -54,7 +54,7 @@ class ProductController extends AbstractController
             }
         }
 
-        FlashMessages::set('added', 'Le produit a bien été ajouté à votre panier.');
+        FlashMessages::set('success', 'Le produit a bien été ajouté à votre panier.');
         return $response->withHeader('Location', '/products')->withStatus(200);
     }
 
@@ -66,7 +66,7 @@ class ProductController extends AbstractController
         
         Cart::addMultipleProductQuantity($args['id'],$data['quantity']);
 
-        FlashMessages::set('added', 'Le produit a bien été ajouté à votre panier.');
+        FlashMessages::set('success', 'Le produit a bien été ajouté à votre panier.');
 
         return $response->withHeader('Location', '/detailedProduct/' . $args['id'])->withStatus(200);
     }
