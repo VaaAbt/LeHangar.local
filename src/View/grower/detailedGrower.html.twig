@@ -5,14 +5,14 @@
     </div>
 
     <div class="detailed-grower-container">
-            <div class="grower">
-                    <img src="https://via.placeholder.com/200" class="grower-img" alt="grower">
-                    <div class="grower-card">
-                        <h5 class="grower-name">{{ grower.name }}</h5>
-                        <p class="grower-location">{{ grower.location }}</p>
-                        <p class="grower-email">{{ grower.email }}</p>
-                    </div>
+        <div class="grower">
+            <img src="https://via.placeholder.com/200" class="grower-img" alt="grower">
+            <div class="grower-card">
+                <h5 class="grower-name">{{ grower.name }}</h5>
+                <p class="grower-location">{{ grower.location }}</p>
+                <p class="grower-email">{{ grower.email }}</p>
             </div>
+        </div>
     </div>
 
     <h2 class="grower-product-title">Produits du producteur</h2>
@@ -31,8 +31,8 @@
                         <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
                         <input type="submit" value="Ajouter au panier" class="product-btn">
                     </div>
-                    </form>
-                </div>
+                </form>
+            </div>
         {% endfor %}
     </main>
     <script src="/js/products.js" type="application/javascript" async></script>

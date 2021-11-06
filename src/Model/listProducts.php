@@ -20,7 +20,8 @@ class listProducts extends Model
      */
     public $timestamps = false;
 
-    public function create($data){
+    public function create($data): listProducts
+    {
         $listproduct = new listProducts();
 
         $listproduct->setAttribute('id_product', $data['id_product']);

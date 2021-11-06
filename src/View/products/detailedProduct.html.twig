@@ -5,22 +5,22 @@
         <h1>Détails du Produit</h1>
     </div>
     <div class="detailed-product-container">
-                <div class="product">
-                    <img src="{{ product.image }}" class="product-img" alt="produit" width="200px" height="200px">
-                    <div class="product-card">
-                        <h5 class="product-title">{{ product.name }}</h5>
-                        <p class="product-grower">Producteur : <a href="/detailedGrower/{{ grower.id }}">{{ grower.name }}</a></p>
-                        <p class="product-category">Categorie : {{ category.name }}</p>
-                        <p class="product-description">{{ product.description }}</p>
-                        <p class="product-price">{{ product.unit_price }} €</p>
-                        <form method="post" action="/detailedProduct/addToCart/{{ product.id }}" id="{{ product.id }}">
-                        <input class="btn-add-quantity" id="button-add" type="button" onclick="incrementValue('{{ product.id }}')" value="+" />
-                        <input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
-                        <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
-                        <input type="submit" value="Add to cart" class="btn">
-                        </form>
-                    </div>
-                </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
+            <div class="product-card">
+                <h5 class="product-title">{{ product.name }}</h5>
+                <p class="product-grower">Producteur : <a href="/detailedGrower/{{ grower.id }}">{{ grower.name }}</a></p>
+                <p class="product-category">Categorie : {{ category.name }}</p>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">{{ product.unit_price }} €</p>
+                <form method="post" action="/detailedProduct/addToCart/{{ product.id }}" id="{{ product.id }}">
+                    <input class="btn-add-quantity" id="button-add" type="button" onclick="incrementValue('{{ product.id }}')" value="+"/>
+                    <label for="number{{ product.id }}"></label><input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
+                    <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-"/>
+                    <input type="submit" value="Add to cart" class="btn">
+                </form>
+            </div>
+        </div>
     </div>
 
     <h2 class="same-product-title">Produits dans la même categorie</h2>
@@ -39,8 +39,8 @@
                         <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-" />
                         <input type="submit" value="Ajouter au panier" class="product-btn">
                     </div>
-                    </form>
-                </div>
+                </form>
+            </div>
         {% endfor %}
     </main>
     <script src="/js/products.js" type="application/javascript" async></script>

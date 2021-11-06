@@ -26,7 +26,8 @@ class Order extends Model
         return $this->hasMany(listProducts::class, 'id_order', 'id');
     }
 
-    public function create($data){
+    public function create($data): Order
+    {
         $order = new Order();
 
         $order->setAttribute('customer_name', $data['customer_name']);
@@ -40,13 +41,18 @@ class Order extends Model
     }
 
 
-    public static function getPending(){
+    public static function getPending()
+    {
         return Order::where('status', "=", 0);
     }
-    public static function getSend(){
+
+    public static function getSend()
+    {
         return Order::where('status', "=", 1);
     }
-    public static function getValidate(){
+
+    public static function getValidate()
+    {
         return Order::where('status', "=", 2);
     }
 
