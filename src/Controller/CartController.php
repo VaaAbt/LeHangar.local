@@ -6,6 +6,7 @@ use App\Model\Product;
 use App\Model\listProducts;
 use App\Model\Order;
 use App\Model\Utils\Cart;
+use App\Model\Utils\FlashMessages;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -47,6 +48,8 @@ class CartController extends AbstractController
         }
 
         unset($_SESSION['cart']);
-        return $this->render($response, 'home.html.twig');
+
+        FlashMessages::set('success', 'Votre commande a bien été enregistrée !');
+        return $response->withHeader('Location', '/')->withStatus(200);
     }
 }

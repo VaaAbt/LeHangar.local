@@ -77,17 +77,22 @@ class Product extends Model
         return $products;
     }
 
-    public static function getRandomProductSameCategory($category,$amount)
+    public static function getRandomProductSameCategory($category,$amount,$pid)
     {
-        $lastProduct = Product::where("id_category", "=", $category)->orderBy('id', 'desc')->first();
+        $lastProduct = Product::distinct()->where("id_category", "=", $category)->orderBy('id', 'desc')->first();
         $min = 1;
         $max = $lastProduct->id;
 
         $products = array();
+        $used = array();
+        array_push($used,$pid);
 
         for ($i=0; $i < $amount; $i++) { 
-            $product_id = rand($min, $max);
-            $item = Product::where('id', '=', $product_id)->first();
+            do{
+                $product_id = rand($min, $max);
+            }while(in_array($product_id,$used));
+            array_push($used,$product_id);
+            $item = Product::distinct()->where('id', '=', $product_id)->first();
             array_push($products, $item);
         }
 

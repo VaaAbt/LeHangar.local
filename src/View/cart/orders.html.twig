@@ -2,7 +2,7 @@
       <div class="cart-container">
     {% for product in products %}
       <div class="cart-product">
-          <img src="https://via.placeholder.com/100" class="cart-img" alt="produit" />
+          <img src="{{ product[0].image }}" class="cart-img" alt="produit" width="100px" height="100px"/>
           <div class="product-card">
             <h5 class="cart-title">
               <a href="/detailedProduct/{{ product[0].id }}">{{ product[0].name }}</a>
