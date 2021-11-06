@@ -11,7 +11,6 @@ body {
 }
 
 .container {
-  margin: 20px 50px;
   width: 80%;
   margin: auto;
 }
@@ -53,7 +52,6 @@ body {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -72,9 +70,7 @@ body {
 .navbar {
   width: 100%;
   padding: 15px;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 30px auto;
 }
 .navbar .navbar-container {
   display: flex;
@@ -202,7 +198,6 @@ body {
   border: none;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -218,7 +213,6 @@ body {
   border: none;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -237,9 +231,7 @@ body {
   flex-wrap: nowrap;
   justify-content: flex-start;
   width: 100%;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 100px;
+  margin: 20px auto 100px;
 }
 .detailed-product-container p, .detailed-product-container h5 {
   font-size: large;
@@ -255,68 +247,35 @@ body {
 .detailed-product-container .product .product-img {
   grid-area: product-img;
 }
-.detailed-product-container .product .product-card {
-  grid-area: product-card;
-  justify-content: space-between;
-  height: 100px;
-}
-.detailed-product-container .product .product-card .btn {
-  color: #fff;
-  background-color: #0d6efd;
-  border: none;
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.detailed-product-container .product .product-card .btn:hover {
-  color: #fff;
-  background-color: #0b5ed7;
-}
-.detailed-product-container .product .product-card .product-price {
-  font-weight: bold;
-  padding: 2px;
-}
-
-.same-product-title {
+.detailed-product-container .product .same-product-title {
   text-align: center;
 }
-
-.same-product-container {
+.detailed-product-container .product .same-product-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto auto;
 }
-.same-product-container .product {
+.detailed-product-container .product .same-product-container .product {
   margin: 15px;
   width: 200px;
   height: 300px;
 }
-.same-product-container .product .product-card {
+.detailed-product-container .product .same-product-container .product .product-card {
+  grid-area: product-card;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100px;
 }
-.same-product-container .product .product-card .btn {
+.detailed-product-container .product .same-product-container .product .product-card .btn {
   color: #fff;
   background-color: #0d6efd;
   border: none;
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -326,11 +285,11 @@ body {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.same-product-container .product .product-card .btn:hover {
+.detailed-product-container .product .same-product-container .product .product-card .btn:hover {
   color: #fff;
   background-color: #0b5ed7;
 }
-.same-product-container .product .product-card .product-price {
+.detailed-product-container .product .same-product-container .product .product-card .product-price {
   font-weight: bold;
   padding: 2px;
 }
@@ -412,9 +371,7 @@ body {
   flex-wrap: nowrap;
   justify-content: flex-start;
   width: 100%;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 100px;
+  margin: 20px auto 100px;
 }
 .detailed-grower-container p, .detailed-grower-container h5 {
   font-size: large;
@@ -445,8 +402,7 @@ body {
   flex-wrap: wrap;
   width: 80%;
   justify-content: center;
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto auto;
 }
 .grower-product-container .product {
   margin: 15px;
@@ -480,7 +436,7 @@ body {
   margin: auto;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.3);
 }
 .sort-container .search-container {
   width: 50%;
@@ -522,7 +478,6 @@ body {
   border: none;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -547,7 +502,7 @@ body {
   grid-area: 1/1/3/3;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.3);
 }
 .cart-summary .cart-orders p, .cart-summary .cart-orders h5 {
   margin-left: 10px;
@@ -592,7 +547,6 @@ body {
   border: none;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -608,7 +562,6 @@ body {
   border: none;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -621,7 +574,7 @@ body {
   grid-area: 1/3/3/6;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.3);
 }
 .cart-summary .cart-form .form-group {
   display: flex;
@@ -652,7 +605,6 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
-  color: #fff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -669,7 +621,7 @@ body {
   grid-area: 3/1/4/3;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.3);
   padding: 50px;
 }
 .cart-summary .cart-sum span {
@@ -710,7 +662,7 @@ body {
 .grower_page .grower_products .grower_products-list .product {
   background-color: #ffffff;
   display: inline-block;
-  box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.3);
   min-width: 200px;
   max-width: 206px;
   margin: 20px;
@@ -754,7 +706,7 @@ body {
   max-width: 500px;
   background-color: #ffffff;
   display: inline-block;
-  box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.3);
   margin: 20px;
   border-radius: 10px;
 }
