@@ -73,6 +73,8 @@ class GrowerController extends AbstractController
         $product->name = $data['name'];
         $product->description = $data['description'];
         $product->unit_price = $data['price'];
+        $product->image = $data['image'];
+
         $product->save();
 
         return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);

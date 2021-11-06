@@ -20,4 +20,5 @@ class Manager extends Model
      */
     public $timestamps = false;
 
+
 }

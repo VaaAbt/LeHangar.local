@@ -19,7 +19,7 @@
                                 <p class="product-title">{{ product.name }}</p>
                                 <p class="product-description">{{ product.description }}</p>
                                 <p class="product-price">{{ product.unit_price }} €</p>
-                                <img src="https://via.placeholder.com/200" class="product-img" alt="produit" width="200px" height="200px">
+                                <img src="{{product.image}}" class="product-img" alt="produit" width="200px" height="200px">
                                 <a href="/grower/myPage/{{grower_infos.id}}/product/{{product.id}}/edit" class="product-btn">Editer</a>
                             </div>
                     </div>

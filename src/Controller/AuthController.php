@@ -23,7 +23,7 @@ class AuthController extends AbstractController
             if($data['type'] === "grower"){
                 return $response->withHeader('Location', '/grower/myPage/' .$_SESSION['auth'])->withStatus(302);
             } else{
-                return $response->withHeader('Location', '/manager/myPage/' .$_SESSION['auth'])->withStatus(302);
+                return $response->withHeader('Location', '/manager/dashboard')->withStatus(302);
             }
         }
 

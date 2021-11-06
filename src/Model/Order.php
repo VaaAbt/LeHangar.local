@@ -39,4 +39,15 @@ class Order extends Model
         return $order;
     }
 
+
+    public static function getPending(){
+        return Order::where('status', "=", 0);
+    }
+    public static function getSend(){
+        return Order::where('status', "=", 1);
+    }
+    public static function getValidate(){
+        return Order::where('status', "=", 2);
+    }
+
 }
