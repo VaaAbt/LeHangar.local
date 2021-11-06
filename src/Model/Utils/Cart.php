@@ -18,7 +18,7 @@ class Cart
         return $total;
     }
 
-    public function checkIfInCart($product_id){
+    public static function checkIfInCart($product_id){
         if(isset($_SESSION['cart'])){
             foreach ($_SESSION['cart'] as $product) {
                 if($product[0] == $product_id){
@@ -44,7 +44,7 @@ class Cart
         return true;
     }
 
-    public function addMultipleProductQuantity($product_id, $quantity){
+    public static function addMultipleProductQuantity($product_id, $quantity){
 
         $arr = array();
         

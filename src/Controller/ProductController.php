@@ -28,7 +28,7 @@ class ProductController extends AbstractController
         $grower = Grower::getGrowerById($product->id_grower);
         $category = Category::getCategoryById($product->id_category);
 
-        $products = Product::getRandomProductSameCategory(1,4);
+        $products = Product::getRandomProductSameCategory(1, 3, $product->id);
 
         return $this->render($response, 'products/detailedProduct.html.twig', [
             'product' => $product,
@@ -42,31 +42,29 @@ class ProductController extends AbstractController
     {
         $data = $request->getParsedBody();
         $product = Product::getProductById($args['id'])->id;
-        if(isset($_SESSION['cart']) == NULL){
+        if (isset($_SESSION['cart']) == NULL) {
             $arr = array();
             array_push($arr, [$product, $data['quantity']]);
             $_SESSION['cart'] = $arr;
-        }else{
-            if(Cart::checkIfInCart($product)){
+        } else {
+            if (Cart::checkIfInCart($product)) {
                 Cart::addProductQuantity($product);
-            }else{
+            } else {
                 array_push($_SESSION['cart'], [$product, $data['quantity']]);
             }
         }
 
-        FlashMessages::set('added', 'Le produit a bien été ajouté à votre panier.');
+        FlashMessages::set('success', 'Le produit a bien été ajouté à votre panier.');
         return $response->withHeader('Location', '/products')->withStatus(200);
     }
-
-    // Je sais pas comment changer withheader en renvoyant a la page avant donc ca en attendant
 
     public function addDetailedProductToCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         $data = $request->getParsedBody();
-        
-        Cart::addMultipleProductQuantity($args['id'],$data['quantity']);
 
-        FlashMessages::set('added', 'Le produit a bien été ajouté à votre panier.');
+        Cart::addMultipleProductQuantity($args['id'], $data['quantity']);
+
+        FlashMessages::set('success', 'Le produit a bien été ajouté à votre panier.');
 
         return $response->withHeader('Location', '/detailedProduct/' . $args['id'])->withStatus(200);
     }

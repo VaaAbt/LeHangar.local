@@ -1,3 +1,5 @@
+SET NAMES utf8;
+
 CREATE TABLE IF NOT EXISTS hangarlocal.grower
 (
     id int(11) NOT NULL AUTO_INCREMENT,
@@ -130,7 +132,7 @@ INSERT INTO product (name, description, unit_price, image, id_category, id_growe
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Lapin (la pièce)', 'Lapin élevé au grain.', 13.37, 'https://cdn.pixabay.com/photo/2016/11/30/20/28/rabbit-1873789_960_720.png', 6, 6);
 
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Thym (100g)', 'Thym tin tin tin.', 3.50, 'https://www.lamprienprovence.fr/img.php?path=https://root.argweb.fr/documents/users/310/editor/pics/produits/herbes-fraiches/bottes-nues/thym.png&size=1024', 7, 7);
-INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Romarin (100g)', 'Romarin as-tu des patins ?', 2.70, 'https://lh3.googleusercontent.com/proxy/30crNjsdt3EpS_mo_QvW37V-W1HN3nAGhHAXoPUnPyCh2fGvS5ZDe5kyCZyz_7fcdoFqU_EY8UjcUriNeOZiMndcYRy5eDkI8cZCS_nB', 7, 7);
+INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Romarin (100g)', 'Romarin as-tu des patins ?', 2.70, 'https://lh3.googleusercontent.com/proxy/JHJ6cs4s-R2eZuuZTA7nMetp9oNx7hrsa3ePgao-V-0sqOdU7J9eIZRieGWPqxFpZM_dCj1tFHLTuYgtszmQLZ0T34J-J_kHmucCUGAI', 7, 7);
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Persil (100g)', 'Persil, quelle heure est-t-il madame persil ?', 1.80, 'https://cdn.pixabay.com/photo/2018/08/22/05/16/parsley-3622868_960_720.png', 7, 8);
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Origan (100g)', 'Origan frais.', 2.70, 'https://www.couleursprovence.com/Files/118577/Img/02/FL-Origan-vrac-zoom.png', 7, 8);
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Herbes de Provence (100g)', 'De Provence.', 1.07, 'https://www.couleursprovence.com/Files/118577/Img/09/FL-Herbes-de-provence-vrac-zoom.png', 7, 8);

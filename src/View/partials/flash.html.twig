@@ -1,6 +1,6 @@
-{% if has_flash('added') %}
+{% if has_flash('success') %}
   <div class="alert alert-success">
-    {{ retrieve_flash('added') }}
+    {{ retrieve_flash('success') }}
   </div>
 {% endif %}
 {% if has_flash('error') %}
