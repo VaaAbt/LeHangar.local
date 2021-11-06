@@ -93,6 +93,7 @@ body {
   .navbar-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .navbar-title {
@@ -107,6 +108,7 @@ body {
 
     ul {
       display: flex;
+      flex-shrink: 0;
 
       li {
         list-style-type: none;

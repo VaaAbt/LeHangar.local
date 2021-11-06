@@ -82,6 +82,7 @@ body {
 .navbar .navbar-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .navbar .navbar-title {
   color: #184e77;
@@ -94,6 +95,7 @@ body {
 }
 .navbar .navbar-menu ul {
   display: flex;
+  flex-shrink: 0;
 }
 .navbar .navbar-menu ul li {
   list-style-type: none;
