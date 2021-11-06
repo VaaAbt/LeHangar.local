@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Model\Utils\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -29,6 +30,20 @@ class Product extends Model
     public function grower(): BelongsTo
     {
         return $this->belongsTo(Grower::class, 'id', 'id_grower');
+    }
+
+    public static function create($data) {
+        $product = new Product();
+
+        $product->setAttribute('name', $data['product_name']);
+        $product->setAttribute('description', $data['product_description']);
+        $product->setAttribute('unit_price', $data['product_price']);
+        $product->setAttribute('image', $data['product_image']);
+        $product->setAttribute('id_category', $data['product_category']);
+        $product->setAttribute('id_grower', Auth::getUserId());
+        $product->save();
+
+        return $product;
     }
 
     public static function getProductById($id){

@@ -23,6 +23,11 @@ class Auth
         return isset($_SESSION['auth']);
     }
 
+    public static function getUserId()
+    {
+        return $_SESSION['auth'];
+    }
+
 
     /**
      * Attempt to log in the user

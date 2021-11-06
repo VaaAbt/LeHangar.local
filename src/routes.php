@@ -50,6 +50,8 @@ $app->get('/grower/myPage/{id}', [GrowerController::class, 'productsView']);
 $app->get('/grower/myPage/{id}/product/{id_product}/edit', [GrowerController::class, 'editProductsView']);
 $app->post('/grower/myPage/{id}/product/{id_product}/edit', [GrowerController::class, 'saveEditOfProduct']);
 
+$app->get('/grower/myPage/{id}/product/new', [GrowerController::class, 'getCreateNewProductPage']);
+$app->post('/grower/myPage/{id}/product/new', [GrowerController::class, 'createNewProduct']);
 //$app->get('/manager/myPage', [ManagerController::class, 'managerView']);
 
 

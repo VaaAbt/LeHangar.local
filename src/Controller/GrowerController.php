@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\Grower;
 use App\Model\listProducts;
-use App\Model\Order;
+use App\Model\Utils\FlashMessages;
 use App\Model\Product;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -78,5 +78,16 @@ class GrowerController extends AbstractController
         
     }
 
+    public function getCreateNewProductPage(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        return $this->render($response, 'account/newProduct.html.twig');
+    }
 
+    public function createNewProduct(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $data = $request->getParsedBody();
+        Product::create($data);
+        FlashMessages::set('success', 'Le produit a bien été créé.');
+        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+    }
 }
