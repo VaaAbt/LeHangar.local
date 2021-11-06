@@ -39,30 +39,44 @@ class GrowerController extends AbstractController
             $id_prodsArray[] = ($prod->id);
         }
 
-        $listProds = []; $listIdOrder = [];
+        $listProds = [];
         $tmplistProdsOrder = listProducts::all();
         foreach($tmplistProdsOrder as $list){
             if(in_array($list->getAttribute('id_product'), $id_prodsArray)){
-                $listProds[$list->getAttribute('id_order')][] = $list->getAttribute('id_product');
-                if(!in_array($list->getAttribute('id_order'), $listIdOrder)){
-                    $listIdOrder[] = $list->getAttribute('id_order');
-                }
+                $listProds[$list->getAttribute('id_order')][] = [Product::query()->where('id', $list->getAttribute('id_product'))->first(), $list->getAttribute('quantity')];
             }
         }
 
-        $tmpOrders = Order::all();
-        $orders = [];
-        foreach($tmpOrders as $ord){
-            if(in_array($ord->getAttribute('id'), $listIdOrder)){
-                $order[] = $ord;
-            }
-        }
+        $informations = Grower::getGrowerById($args['id']);
 
         return $this->render($response, 'account/grower.html.twig', [
             'products' => $products,
             'listProducts' => $listProds,
-            'orders' => $orders
+            'grower_infos' => $informations
         ]);
     }
+
+    public function editProductsView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $product = Product::getProductById($args['id_product']);
+        return $this->render($response, 'account/productEdition.html.twig', [
+            'product' => $product
+        ]);
+    }
+
+    public function saveEditOfProduct(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $product = Product::getProductById($args['id_product']);
+        $data = $request->getParsedBody();
+
+        $product->name = $data['name'];
+        $product->description = $data['description'];
+        $product->unit_price = $data['price'];
+        $product->save();
+
+        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+        
+    }
+
 
 }
