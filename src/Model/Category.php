@@ -33,6 +33,6 @@ class Category extends Model
 
     public static function getCategoryById($id)
     {
-        return Category::where('id','=',$id)->first();
+        return Category::where('id', '=', $id)->first();
     }
 }
