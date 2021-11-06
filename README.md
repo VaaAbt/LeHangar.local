@@ -20,3 +20,8 @@ Il faut ajouter l'adresse `lehangar.local` au fichier /etc/hosts.
 ```
 
 Ensuite il faut taper la commande `sudo make dev` et se rendre sur l'adresse `lehangar.local:8080`
+
+### compte producteur
+Pour accéder au compte producteur, vous pouvez utiliser ces identidiants :
+email : `produitslocaux.54000@gmail.com`
+mdp : `test`
