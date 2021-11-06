@@ -47,6 +47,8 @@ $app->get('/about', [AboutController::class, 'about']);
 
 //Manager and Grower view
 $app->get('/grower/myPage/{id}', [GrowerController::class, 'productsView']);
+$app->get('/grower/myPage/{id}/edit', [GrowerController::class, 'getGrowerEditView']);
+$app->post('/grower/myPage/{id}/edit', [GrowerController::class, 'editGrowerInformations']);
 $app->get('/grower/myPage/{id}/product/{id_product}/edit', [GrowerController::class, 'editProductsView']);
 $app->post('/grower/myPage/{id}/product/{id_product}/edit', [GrowerController::class, 'saveEditOfProduct']);
 

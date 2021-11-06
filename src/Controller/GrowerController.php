@@ -99,5 +99,25 @@ class GrowerController extends AbstractController
         FlashMessages::set('success', 'Le produit a bien été supprimé.');
         return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
     }
+
+    public function getGrowerEditView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $grower = Grower::getGrowerById($args['id']);
+        return $this->render($response, 'account/editGrower.html.twig', [
+            'grower' => $grower
+        ]);
+    }
+
+    public function editGrowerInformations(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $grower = Grower::getGrowerById($args['id']);
+        $data = $request->getParsedBody();
+        $grower->name = $data['grower_name'];
+        $grower->location = $data['grower_adresse'];
+        $grower->email = $data['grower_email'];
+        $grower->save();
+        FlashMessages::set('success', 'Votre compte a bien été modifié!');
+        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+    }
     
 }
