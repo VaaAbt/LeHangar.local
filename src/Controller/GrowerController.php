@@ -60,7 +60,8 @@ class GrowerController extends AbstractController
     {
         $product = Product::getProductById($args['id_product']);
         return $this->render($response, 'account/productEdition.html.twig', [
-            'product' => $product
+            'product' => $product,
+            'grower_id' => $args['id']
         ]);
     }
 
@@ -90,4 +91,13 @@ class GrowerController extends AbstractController
         FlashMessages::set('success', 'Le produit a bien été créé.');
         return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
     }
+
+    public function deleteProduct(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    {
+        $product = Product::getProductById($args['id_product']);
+        $product->delete();
+        FlashMessages::set('success', 'Le produit a bien été supprimé.');
+        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+    }
+    
 }

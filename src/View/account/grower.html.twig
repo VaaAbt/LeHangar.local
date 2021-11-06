@@ -7,16 +7,7 @@
         <p class="">{{grower_infos.email}}</p>
         <a href="#" class="btn btn-success">modifier mon profil</a>
 
-        {% if has_flash('credentials') %}
-            <div class="alert alert-danger">
-                {{ retrieve_flash('credentials') }}
-            </div>
-        {% endif %}
-        {% if has_flash('auth') %}
-            <div class="alert alert-danger">
-                {{ retrieve_flash('auth') }}
-            </div>
-        {% endif %}
+    {% include 'partials/flash.html.twig' %}
 
         <div class="grower_products">
             <h3 class="grower_products-title">Mes produits</h3>

@@ -52,6 +52,8 @@ $app->post('/grower/myPage/{id}/product/{id_product}/edit', [GrowerController::c
 
 $app->get('/grower/myPage/{id}/product/new', [GrowerController::class, 'getCreateNewProductPage']);
 $app->post('/grower/myPage/{id}/product/new', [GrowerController::class, 'createNewProduct']);
+
+$app->get('/grower/myPage/{id}/product/{id_product}/delete', [GrowerController::class, 'deleteProduct']);
 //$app->get('/manager/myPage', [ManagerController::class, 'managerView']);
 
 
