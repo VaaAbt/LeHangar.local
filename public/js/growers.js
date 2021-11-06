@@ -1,4 +1,4 @@
-const search = document.getElementsByClassName('search_input')[0];
+const search = document.getElementsByClassName('search-input')[0];
 const listProds = Array.from(document.getElementsByClassName('grower'));
 
 search.addEventListener('input', () => {
