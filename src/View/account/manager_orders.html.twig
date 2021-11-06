@@ -1,0 +1,119 @@
+{% extends 'account/base.html.twig' %}
+{% block content %}
+
+    <div class="container manager_page">
+        <h1 class="mb-4">Page Manager</h1>
+
+        <h2 class="title_page">Tableau de bord</h2>
+
+
+        <div class="container-orders manager_pending-container">
+            <h3>Commandes à envoyer</h3>
+
+            <div class="orders_list">
+                {% for id, items in ordPend %}
+                <div class="order">
+                    <img src="https://via.placeholder.com/200/088e8f/ffffff" alt="client">
+                    <div class="client-order_details">
+                        {% for key, item in items %}
+                        {% if key == 0 %}
+                        <div class="client_name-email">
+                            <p class="name">{{ item.customer_name }}</p>
+                            <p class="email">{{ item.customer_email }}</p>
+                        </div>
+                        <div class="client_telephone-amount">
+                            <p class="telephone">{{ item.customer_phone }}</p>
+                            <p class="amount">{{ item.amount }}€</p>
+                        </div>
+                        <div class="class_products">
+                            <p>Produits</p>
+                            <div class="products_list">
+                                {% elseif key > 0 %}
+                                    <p class="product">{{ item.name }}</p>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div class="container-orders manager_send-container">
+            <h3>Commandes à payer</h3>
+
+            <div class="orders_list">
+                {% for id, items in ordSend %}
+                    <div class="order">
+                        <img src="https://via.placeholder.com/200/088e8f/ffffff" alt="client">
+                        <div class="client-order_details">
+                            {% for key, item in items %}
+                            {% if key == 0 %}
+                            <div class="client_name-email">
+                                <p class="name">{{ item.customer_name }}</p>
+                                <p class="email">{{ item.customer_email }}</p>
+                            </div>
+                            <div class="client_telephone-amount">
+                                <p class="telephone">{{ item.customer_phone }}</p>
+                                <p class="amount">{{ item.amount }}€</p>
+                            </div>
+                            <div class="class_products">
+                                <p>Produits</p>
+                                <div class="products_list">
+                                    {% elseif key > 0 %}
+                                        <p class="product">{{ item.name }}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div class="container-orders manager_validate-container">
+            <h3>Commandes validées</h3>
+
+            <div class="orders_list">
+                {% for id, items in ordVal %}
+                    <div class="order">
+                        <img src="https://via.placeholder.com/200/088e8f/ffffff" alt="client">
+                        <div class="client-order_details">
+                            {% for key, item in items %}
+                            {% if key == 0 %}
+                            <div class="client_name-email">
+                                <p class="name">{{ item.customer_name }}</p>
+                                <p class="email">{{ item.customer_email }}</p>
+                            </div>
+                            <div class="client_telephone-amount">
+                                <p class="telephone">{{ item.customer_phone }}</p>
+                                <p class="amount">{{ item.amount }}€</p>
+                            </div>
+                            <div class="class_products">
+                                <p>Produits</p>
+                                <div class="products_list">
+                                    {% elseif key > 0 %}
+                                        <p class="product">{{ item.name }}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+        <div class="manager_link">
+            <a href="/manager/dashboard">Dashboard</a>
+        </div>
+
+    </div>
+
+{% endblock %}

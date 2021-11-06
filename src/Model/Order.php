@@ -43,17 +43,17 @@ class Order extends Model
 
     public static function getPending()
     {
-        return Order::where('status', "=", 0);
+        return Order::where('status', "=", 0)->get();
     }
 
     public static function getSend()
     {
-        return Order::where('status', "=", 1);
+        return Order::where('status', "=", 1)->get();
     }
 
     public static function getValidate()
     {
-        return Order::where('status', "=", 2);
+        return Order::where('status', "=", 2)->get();
     }
 
 }
