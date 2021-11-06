@@ -72,7 +72,6 @@ class ProductController extends AbstractController
     public function getProductsByCategory(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         $products = Product::where('id_category', '=', $args['id'])->get();
-        //$products = $cat->products();
         $categories = Category::getAll();
         return $this->render($response, 'products/products.html.twig', [
             'products' => $products,

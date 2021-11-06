@@ -1,0 +1,42 @@
+{% extends 'account/base.html.twig' %}
+{% block content %}
+
+    <div class="container manager_page">
+        <h1 class="mb-4">Page Manager</h1>
+
+        <h2 class="title_page">Tableau de bord</h2>
+
+
+        <div class="dashboard">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Nombres</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Commandes à envoyer</td>
+                        <td>{{ nb_ordPend }}</td>
+                    </tr>
+                <tr>
+                    <td>Commandes à payer</td>
+                    <td>{{ nb_ordSend }}</td>
+                </tr>
+                <tr>
+                    <td>Commandes livrés</td>
+                    <td>{{ nb_ordVal }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="manager_link">
+            <a href="/manager/orders">Commandes</a>
+        </div>
+
+    </div>
+
+{% endblock %}

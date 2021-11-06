@@ -20,10 +20,10 @@ class AuthController extends AbstractController
         $data = $request->getParsedBody();
 
         if (Auth::attempt($data['email'], $data['password'], $data['type'])) { // login success
-            if($data['type'] === "grower"){
-                return $response->withHeader('Location', '/grower/myPage/' .$_SESSION['auth'])->withStatus(302);
-            } else{
-                return $response->withHeader('Location', '/manager/myPage/' .$_SESSION['auth'])->withStatus(302);
+            if ($data['type'] === "grower") {
+                return $response->withHeader('Location', '/grower/myPage/' . $_SESSION['auth'])->withStatus(302);
+            } else {
+                return $response->withHeader('Location', '/manager/dashboard')->withStatus(302);
             }
         }
 
@@ -32,39 +32,39 @@ class AuthController extends AbstractController
     }
 
     /**public function signupView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
-    {
-        return $this->render($response, 'signup.html.twig');
-    }
-
-    public function signup(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
-    {
-        $payload = $request->getParsedBody();
-
-        $dataValidator = [
-            'firstname' => Validator::isNotEmpty($payload['firstname']),
-            'lastname' => Validator::isNotEmpty($payload['lastname']),
-            'email' => Validator::isEmail($payload['email']),
-            'password' => Validator::isEqual($payload['password'], $payload['password-confirmation']),
-            'email_unique' => !Validator::isEmailAlreadyExist($payload['email'])
-        ];
-
-        $result = (bool)array_product($dataValidator);
-
-        if ($result) {
-            User::create($payload);
-            Auth::attempt($payload['email'], $payload['password']);
-
-            return $response->withHeader('Location', '/')->withStatus(302);
-        }
-
-        if (!$dataValidator['email_unique']) {
-            FlashMessages::set('signup', 'The email is already taken.');
-        } else {
-            FlashMessages::set('signup', 'The form contains invalid data.');
-        }
-
-        return $response->withHeader('Location', '/signup')->withStatus(422);
-    }**/
+     * {
+     * return $this->render($response, 'signup.html.twig');
+     * }
+     *
+     * public function signup(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+     * {
+     * $payload = $request->getParsedBody();
+     *
+     * $dataValidator = [
+     * 'firstname' => Validator::isNotEmpty($payload['firstname']),
+     * 'lastname' => Validator::isNotEmpty($payload['lastname']),
+     * 'email' => Validator::isEmail($payload['email']),
+     * 'password' => Validator::isEqual($payload['password'], $payload['password-confirmation']),
+     * 'email_unique' => !Validator::isEmailAlreadyExist($payload['email'])
+     * ];
+     *
+     * $result = (bool)array_product($dataValidator);
+     *
+     * if ($result) {
+     * User::create($payload);
+     * Auth::attempt($payload['email'], $payload['password']);
+     *
+     * return $response->withHeader('Location', '/')->withStatus(302);
+     * }
+     *
+     * if (!$dataValidator['email_unique']) {
+     * FlashMessages::set('signup', 'The email is already taken.');
+     * } else {
+     * FlashMessages::set('signup', 'The form contains invalid data.');
+     * }
+     *
+     * return $response->withHeader('Location', '/signup')->withStatus(422);
+     * }**/
 
     public function logout(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {

@@ -6,6 +6,7 @@ use Slim\App;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Twig\TwigFunction;
+use App\Model\Utils\Auth;
 
 return static function (App $app) {
     /** @var Container $container */
@@ -16,6 +17,9 @@ return static function (App $app) {
 
     $environment = $twig->getEnvironment();
     $environment->addGlobal('cart', $_SESSION['cart']);
+    $environment->addGlobal('auth', [
+        'check' => Auth::isLoggedIn()
+    ]);
 
     // Flash messages
     $environment->addFunction(new TwigFunction('has_flash', function (string $key) {
