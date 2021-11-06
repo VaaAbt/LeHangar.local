@@ -5,6 +5,7 @@ use App\Controller\AuthController;
 use App\Controller\AboutController;
 use App\Controller\GrowerController;
 use App\Controller\HomeController;
+use App\Controller\ManagerController;
 use App\Controller\ProductController;
 use App\Controller\CartController;
 use Slim\App;
@@ -52,6 +53,10 @@ $app->post('/grower/myPage/{id}/product/{id_product}/edit', [GrowerController::c
 
 $app->get('/grower/myPage/{id}/product/new', [GrowerController::class, 'getCreateNewProductPage']);
 $app->post('/grower/myPage/{id}/product/new', [GrowerController::class, 'createNewProduct']);
-//$app->get('/manager/myPage', [ManagerController::class, 'managerView']);
+
+
+
+$app->get('/manager/dashboard', [ManagerController::class, 'dashboardView']);
+$app->get('/manager/orders', [ManagerController::class, 'ordersView']);
 
 

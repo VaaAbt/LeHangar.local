@@ -95,9 +95,12 @@ INSERT INTO category VALUES (7, 'aromates', 'aromath');
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Carottes (1kg)', 'Carottes fraiches de l\'est, cultivés sur des terres non poluées par des pesticides.', 0.89, 'https://www.lafermederigny.fr/wp-content/uploads/2019/09/carottes-vrac.png', 1, 1);
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Salade (la pièce)', 'Salade verte, arrosé à l\'eau de pluie et cultivée dans le sable.', 0.99, 'https://www.plaineduroussillon.com/wp-content/uploads/2017/06/Salade.png', 1, 2);
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Haricots beurre (220g)', 'Haricots très bon pour les petits enfants.', 1.05, 'https://www.gelpassgroup.com/wp-content/uploads/2018/11/haricot_beurre.png', 1, 3);
-INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Aubergine (la pièce)', 'Aubergine violette, cultivé sur les flants de montagnes de l\'est.', 1.19, 'https://www.les-toques.fr/wp-content/uploads/2021/03/2.-aubergine-Sharapova-650x1024.png', 1, 4);
-INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Tomates (1kg)', 'Tomates cultivées en serre.', 1.49, 'https://www.charlet.com/wp-content/uploads/2017/07/tomat.png', 1, 8);
-INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Oignons (1kg)', 'Oignons.', 1.49, 'https://www.vilmorin.fr/sites/france.sam/files/Oignon_Texte2.png', 1, 2);
+
+
+
+
+
+
 
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Pommes (500g)', 'Pommes vertes grannysmith, ont poussés sur des arbres millénaires.', 0.99, 'https://www.domaine-darmandieu.com/wp-content/uploads/2018/07/Domaine-darmandieu-variete-pomme-Braeburn.png', 2, 5);
 INSERT INTO product (name, description, unit_price, image, id_category, id_grower) VALUES ('Poires (500g)', 'Poires williams, arrosés au william peel.', 0.99, 'https://felpi.fr/wp-content/uploads/2018/12/poires-fruit-industrie.png', 2, 6);
