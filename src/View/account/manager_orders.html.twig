@@ -31,7 +31,7 @@
                                 {% elseif key > 0 %}
                                     <p class="product">{{ item.name }}</p>
                                 {% endif %}
-                                {% enfor %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,32 @@
             <h3>Commandes à payer</h3>
 
             <div class="orders_list">
-
+                {% for id, items in ordSend %}
+                    <div class="order">
+                        <img src="https://via.placeholder.com/200/088e8f/ffffff" alt="client">
+                        <div class="client-order_details">
+                            {% for key, item in items %}
+                            {% if key == 0 %}
+                            <div class="client_name-email">
+                                <p class="name">{{ item.customer_name }}</p>
+                                <p class="email">{{ item.customer_email }}</p>
+                            </div>
+                            <div class="client_telephone-amount">
+                                <p class="telephone">{{ item.customer_phone }}</p>
+                                <p class="amount">{{ item.amount }}€</p>
+                            </div>
+                            <div class="class_products">
+                                <p>Produits</p>
+                                <div class="products_list">
+                                    {% elseif key > 0 %}
+                                        <p class="product">{{ item.name }}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -54,7 +79,32 @@
             <h3>Commandes validées</h3>
 
             <div class="orders_list">
-
+                {% for id, items in ordVal %}
+                    <div class="order">
+                        <img src="https://via.placeholder.com/200/088e8f/ffffff" alt="client">
+                        <div class="client-order_details">
+                            {% for key, item in items %}
+                            {% if key == 0 %}
+                            <div class="client_name-email">
+                                <p class="name">{{ item.customer_name }}</p>
+                                <p class="email">{{ item.customer_email }}</p>
+                            </div>
+                            <div class="client_telephone-amount">
+                                <p class="telephone">{{ item.customer_phone }}</p>
+                                <p class="amount">{{ item.amount }}€</p>
+                            </div>
+                            <div class="class_products">
+                                <p>Produits</p>
+                                <div class="products_list">
+                                    {% elseif key > 0 %}
+                                        <p class="product">{{ item.name }}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
 

@@ -61,4 +61,6 @@ $app->get('/grower/myPage/{id}/product/{id_product}/delete', [GrowerController::
 $app->get('/manager/dashboard', [ManagerController::class, 'dashboardView']);
 $app->get('/manager/orders', [ManagerController::class, 'ordersView']);
 
+$app->post('/order/changeStatus/{id}/{status}', [ManagerController::class, 'changeStatusOrder']);
+
 
