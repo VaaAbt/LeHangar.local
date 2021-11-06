@@ -6,7 +6,7 @@
     </div>
     <div class="detailed-product-container">
         <div class="product">
-            <img src="https://via.placeholder.com/200" class="product-img" alt="produit">
+            <img src="{{ product.image }}" class="product-img" alt="produit" width="200px" height="200px">
             <div class="product-card">
                 <h5 class="product-title">{{ product.name }}</h5>
                 <p class="product-grower">Producteur : <a href="/detailedGrower/{{ grower.id }}">{{ grower.name }}</a></p>
@@ -17,7 +17,7 @@
                     <input class="btn-add-quantity" id="button-add" type="button" onclick="incrementValue('{{ product.id }}')" value="+"/>
                     <label for="number{{ product.id }}"></label><input type="text" id="number{{ product.id }}" name="quantity" value="1" size="1"/>
                     <input class="btn-remove-quantity" id="button-remove" type="button" onclick="decrementValue('{{ product.id }}')" value="-"/>
-                    <input type="submit" value="Add to cart" class="btn">
+                    <input type="submit" value="Add to cart" class="product-btn">
                 </form>
             </div>
         </div>
