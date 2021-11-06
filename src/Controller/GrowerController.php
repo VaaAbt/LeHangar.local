@@ -41,8 +41,8 @@ class GrowerController extends AbstractController
 
         $listProds = [];
         $tmplistProdsOrder = listProducts::all();
-        foreach($tmplistProdsOrder as $list){
-            if(in_array($list->getAttribute('id_product'), $id_prodsArray)){
+        foreach ($tmplistProdsOrder as $list) {
+            if (in_array($list->getAttribute('id_product'), $id_prodsArray)) {
                 $listProds[$list->getAttribute('id_order')][] = [Product::query()->where('id', $list->getAttribute('id_product'))->first(), $list->getAttribute('quantity')];
             }
         }
@@ -77,8 +77,8 @@ class GrowerController extends AbstractController
 
         $product->save();
 
-        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
-        
+        return $response->withHeader('Location', '/grower/myPage/' . $args['id'])->withStatus(302);
+
     }
 
     public function getCreateNewProductPage(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
@@ -91,7 +91,7 @@ class GrowerController extends AbstractController
         $data = $request->getParsedBody();
         Product::create($data);
         FlashMessages::set('success', 'Le produit a bien été créé.');
-        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+        return $response->withHeader('Location', '/grower/myPage/' . $args['id'])->withStatus(302);
     }
 
     public function deleteProduct(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
@@ -99,7 +99,7 @@ class GrowerController extends AbstractController
         $product = Product::getProductById($args['id_product']);
         $product->delete();
         FlashMessages::set('success', 'Le produit a bien été supprimé.');
-        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+        return $response->withHeader('Location', '/grower/myPage/' . $args['id'])->withStatus(302);
     }
 
     public function getGrowerEditView(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
@@ -119,7 +119,7 @@ class GrowerController extends AbstractController
         $grower->email = $data['grower_email'];
         $grower->save();
         FlashMessages::set('success', 'Votre compte a bien été modifié!');
-        return $response->withHeader('Location', '/grower/myPage/' .$args['id'])->withStatus(302);
+        return $response->withHeader('Location', '/grower/myPage/' . $args['id'])->withStatus(302);
     }
-    
+
 }

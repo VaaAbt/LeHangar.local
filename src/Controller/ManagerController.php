@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\Manager;
 use App\Model\Order;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

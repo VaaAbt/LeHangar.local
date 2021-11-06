@@ -16,8 +16,8 @@ class CartController extends AbstractController
     {
         $products = array();
 
-        if(isset($_SESSION['cart'])){
-            for ($i=0; $i < count($_SESSION['cart']); $i++) { 
+        if (isset($_SESSION['cart'])) {
+            for ($i = 0; $i < count($_SESSION['cart']); $i++) {
                 array_push($products, [Product::getProductById($_SESSION['cart'][$i]), $_SESSION['cart'][$i][1]]);
             }
         }
@@ -26,8 +26,9 @@ class CartController extends AbstractController
             'total' => Cart::getSumOfCart()
         ]);
     }
+
     public function orderCart(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
-    {   
+    {
         $data = $request->getParsedBody();
         $order = Order::create([
             'customer_name' => $data['customer_name'],
@@ -37,12 +38,12 @@ class CartController extends AbstractController
             'status' => '0',
         ]);
 
-        if(isset($_SESSION['cart'])){
+        if (isset($_SESSION['cart'])) {
             foreach ($_SESSION['cart'] as $product) {
                 $newCommand = listProducts::create([
                     'id_product' => $product[0],
                     'id_order' => $order->id,
-                    'quantity' => $product[1] 
+                    'quantity' => $product[1]
                 ]);
             }
         }
