@@ -26,15 +26,16 @@ body {
   text-align: center;
 }
 .home-img img {
-  width: 100%;
+  width: 78vw;
 }
 .home-img .text-centered {
+  white-space: nowrap;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #184e77;
-  font-size: 28px;
+  font-size: 3vw;
   font-weight: bold;
   padding: 20px;
   background-color: white;
