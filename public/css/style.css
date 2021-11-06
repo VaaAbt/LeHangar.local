@@ -148,17 +148,24 @@ body {
   padding: 5px 10px;
   min-height: 100%;
 }
-.product-container .product .product-title {
+.product-container .product .product-card > * {
+  margin: 5px 0px;
+}
+.product-container .product .product-card .product-title {
   font-weight: bold;
   font-size: 18px;
 }
-.product-container .product .product-description {
-  opacity: 0.8;
+.product-container .product .product-card .product-grower {
+  color: blue;
 }
-.product-container .product .product-price {
+.product-container .product .product-card .product-description {
+  opacity: 0.8;
+  text-align: justify;
+}
+.product-container .product .product-card .product-price {
   font-weight: bold;
 }
-.product-container .product .product-btn {
+.product-container .product .product-card .product-btn {
   color: #fff;
   background-color: #0d6efd;
   border: none;
@@ -174,10 +181,57 @@ body {
   font-size: 1rem;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
 }
-.product-container .product .product-btn:hover {
+.product-container .product .product-card .product-btn:hover {
   color: #fff;
   background-color: #0b5ed7;
+}
+.product-container .product .product-card a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.product-container .product .product-card a:visited {
+  color: blue;
+}
+.product-container .product .product-card .btn-container-quantity {
+  margin: auto;
+  text-align: center;
+}
+.product-container .product .product-card input {
+  text-align: center;
+}
+.product-container .product .product-card .btn-remove-quantity {
+  margin: 10px;
+  color: #fff;
+  background-color: #d12f2f;
+  border: none;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.product-container .product .product-card .btn-add-quantity {
+  margin: 10px;
+  color: #fff;
+  background-color: #2fd165;
+  border: none;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .product-container .product.hide {
   display: none;
